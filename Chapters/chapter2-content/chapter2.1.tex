@@ -14,15 +14,15 @@
     
     Thus, a more complete understanding of MV function and failure must involve an improved understanding of how the above MV leaflet structures mechanically interact. This is best done through the mathematical development of constitutive models that incorporate these features, which can aid both in providing insight and in forming a predictive modeling framework for their remodeling and failure. In the present, work we developed a novel comprehensive meso-scale (i.e. at the level of the fiber) structural constitutive model (MSSCM) for MV leaflets, focusing on the specific collagen and elastin fiber networks within each of its four distinct layers. We used a comprehensive set of structural and mechanical studies (Table \ref{c2tab:experiments}) and a rigorous experimentally guided approach to tackle model formulation, parameter optimization and model validation (Fig. 1). The results were then validated at both the micro (fibril) and tissue-level using a novel approach based on a previous SAXS study on the mitral valve \cite{liao_relation_2007}, and again at the meso-scale using measured fiber structures. We also explored a novel extension to previous structural constitutive model approaches \cite{hollander_constitutive_2011,chen_micromechanics_2011,fata_insights_2014,sacks_incorporation_2003} to allow for angular dependency of collagen fiber recruitment (orientation-variant) and assessed the model predictive capabilities under extra physiological loading that could occur in post-surgical scenarios.
     
-\begin{table}\label{c2tab:experiments}
+\begin{table}
 \centering
-\caption{Experimental Techniques and Deliverables}
- \begin{tabular}{|m{.2in}|L{0.6in}|L{1in}|L{2.5in}|L{0.95in}|}
+\caption{Experimental Techniques and Deliverables}\label{c2tab:experiments}
+ \begin{tabular}{|m{.15in}|L{0.6in}|L{1in}|L{2.4in}|L{0.95in}|}
  \hline
  &  \textbf{Study}  & \textbf{Description}  & \textbf{Purpose}  & \textbf{Description}  \\
  \hline
  
- \multirow{2}{0.2in}{\rotatebox[origin=c]{90}{Structural}}
+ \multirow{7}{*}{\rotatebox[origin=c]{90}{Structure}}
  & SHG  
  & Image of fluorescently labeled collagen and elastin 
  & Image processing is done to quantify the fiber orientation distribution function of collagen and elastin within each layer. 
@@ -35,7 +35,7 @@
  & Mass fractions   \\
  \hline
  
- \multirow{1}{0.2in}{\rotatebox[origin=c]{90}{Mechanical}}
+ \multirow{22}{*}{\rotatebox[origin=c]{90}{Mechanical}}
  & SAXS
  & X-ray scattering at a length comparable to D-period of the fiber
  & The SAXS scatter pattern have periods related to the D-period of the collagen fibers. The D-period can be used to quantify the fiber-level strain and the fiber stiffness
@@ -45,7 +45,7 @@
  & Planar Biax (EB)
  & Biax with equal strain along both axes
  & Under equibiaxial strain, we can recover the ensemble stress from the sum of the axial stresses. This allows us to model the ensemble stress directly to determine the fiber modulus and fiber recruitment.
- & \multirow{1}{0.95in}{Collagen Fiber Modulus, Recruitment Parameters (For validation)}  \\
+ & \multirow{8}{0.95in}{Collagen Fiber Modulus, Recruitment Parameters (For validation)}  \\
  \cline{2-4}
  
  & Uniaxial	
@@ -61,3 +61,14 @@
  
  \end{tabular}
 \end{table}
+
+
+
+
+
+
+
+
+
+
+
