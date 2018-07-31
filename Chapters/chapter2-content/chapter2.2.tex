@@ -222,8 +222,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Structural characterization} \label{c2sec:structure}
 
-    To obtain the mass fractions of the major ECM components for each layer, additional porcine MV leaflets (n = 3) were harvested from a local slaughter house and immediately transported for sectioning. Transverse sections from the central region of each leaflet were stained using Movat’s Pentachrome stain (Fig. 2), and then imaged using light microscopy to determine the relative thickness of each layer. Color deconvolution was then used to separate the collagen (yellow), elastin (Black), and PGs (Blue). The relative area fraction in each layer was determined using the total color intensity (Table \ref{c2tab:massfractions}). ODFs for both collagen and elastin fiber networks were quantified by SHG imaging using methods described by Carruthers et al. [13] (Fig. 2). The resulting orientation distribution functions (ODF) for collagen and elastin were obtained using the methods of Courtney et al. [52].
+    To obtain the mass fractions of the major ECM components for each layer, additional porcine MV leaflets (n = 3) were harvested from a local slaughter house and immediately transported for sectioning. Transverse sections from the central region of each leaflet were stained using Movat’s Pentachrome stain (Fig. \ref{c2:fig:2}), and then imaged using light microscopy to determine the relative thickness of each layer. Color deconvolution was then used to separate the collagen (yellow), elastin (Black), and PGs (Blue). The relative area fraction in each layer was determined using the total color intensity (Table \ref{c2tab:massfractions}). ODFs for both collagen and elastin fiber networks were quantified by SHG imaging using methods described by Carruthers et al. \cite{carruthers_alterations_2012} (Fig. \ref{c2:fig:2}). The resulting orientation distribution functions (ODF) for collagen and elastin were obtained using the methods of Courtney et al. \cite{courtney_design_2006}.
     
+    
+
+
+%%%%%%%%%%%%%%%%%%%%	begin FIGURE 	%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{Images/chapter2/figure2.pdf}
+\caption{Microstructural analysis was done using Movat pentachrome stain of the transverse-radial section of the center region of the MV anterior leaflet (Top), and multiphoton microscopy (MPM) of the ventricularis (V), fibrosa (F), spongiosa (S) and atrialis (A) layer of the anterior leaflet (Bottom). The histological section shows the relative thickness of each layer, and the MPM shows the orientation or collagen (red) and elastin (green) fibers in each layer.}
+\label{c2:fig:2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%	 end FIGURE 	%%%%%%%%%%%%%%%%%%%%
+
+
+
     
 \begin{table}
 \centering
@@ -281,17 +295,41 @@
     Obtaining the true global cost-function minimum can become exceptionally difficult for highly nonlinear models with a large number of parameters, such as equation \ref{eqn:multilayeredstressform}. This will often include issues such as parameter covariance and the presence of local minima. We thus developed the following detailed sequential procedure for parameter estimation using observations from the structure of the MV leaflet (Section \ref{c2sec:structure}).
     
     
-    Firstly, the ventricularis is rich in both elastin and collagen, with a relatively narrow ODF and a preferential orientation in the circumferential direction for both fiber types (Fig. 2). Secondly, the fibrosa, comprising the bulk of the MV leaflet, contains mainly collagen fibers highly aligned to the circumferential direction with almost no elastin except for trace amounts near the spongiosa. Thirdly, the spongiosa contains relatively small amounts of elastin and collagen, both of which are randomly oriented, and is predominately composed of PGs and GAGs. Fourthly, the atrialis contains the largest population of elastin and some collagen, both of which has a narrow ODF and oriented along the radial direction. Fifthly, since the collagen and elastin fibers in the ventricularis and fibrosa were observed to have very similar ODFs, they cannot be separated reliably from a parameter optimization standpoint. Thus, the small amount of elastin in the fibrosa was considered part of the ventricularis elastin, and the collagen in the ventricularis was considered part of the fibrosa collagen. Also, since the collagen and elastin fibers in the ventricularis and fibrosa were found to be identically aligned and orthogonal to the atrialis, their respective preferred directions were fixed during parameter estimation.
+    Firstly, the ventricularis is rich in both elastin and collagen, with a relatively narrow ODF and a preferential orientation in the circumferential direction for both fiber types (Fig. \ref{c2:fig:2}). Secondly, the fibrosa, comprising the bulk of the MV leaflet, contains mainly collagen fibers highly aligned to the circumferential direction with almost no elastin except for trace amounts near the spongiosa. Thirdly, the spongiosa contains relatively small amounts of elastin and collagen, both of which are randomly oriented, and is predominately composed of PGs and GAGs. Fourthly, the atrialis contains the largest population of elastin and some collagen, both of which has a narrow ODF and oriented along the radial direction. Fifthly, since the collagen and elastin fibers in the ventricularis and fibrosa were observed to have very similar ODFs, they cannot be separated reliably from a parameter optimization standpoint. Thus, the small amount of elastin in the fibrosa was considered part of the ventricularis elastin, and the collagen in the ventricularis was considered part of the fibrosa collagen. Also, since the collagen and elastin fibers in the ventricularis and fibrosa were found to be identically aligned and orthogonal to the atrialis, their respective preferred directions were fixed during parameter estimation.
     
     
 \subsubsection{Modifications for collagen fiber recruitment bounds}
 
-    As observed in both uniaxial and EB strain data (Fig. 3), a gradual increase in collagen fiber recruitment and a transition to a linear stress–strain response were clearly visible. In preliminary studies of the collagen fiber recruitment probability function $D(E_s)$, we observed that when the lower-bound $E_{lb}$ was sufficiently distant from the mean $\mu_r$, the overall shape of $D(E_s)$ did not change significantly with further decreases in $E_{lb}$. Thus, to reduce the number of parameters, the lower-bound of the distribution was set to $E_{lb} = 0$.
+    As observed in both uniaxial and EB strain data (Fig. \ref{c2:fig:3}), a gradual increase in collagen fiber recruitment and a transition to a linear stress–strain response were clearly visible. In preliminary studies of the collagen fiber recruitment probability function $D(E_s)$, we observed that when the lower-bound $E_{lb}$ was sufficiently distant from the mean $\mu_r$, the overall shape of $D(E_s)$ did not change significantly with further decreases in $E_{lb}$. Thus, to reduce the number of parameters, the lower-bound of the distribution was set to $E_{lb} = 0$.
     
+    
+%%%%%%%%%%%%%%%%%%%%	begin FIGURE 	%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{Images/chapter2/figure3.pdf}
+\caption{Example mechanical testing result of (a) uniaxial and (b) and (c) equibiaxial strain test data from an anterior leaflet. The linear post recruitment region is shown by the black line, which indicates full collagen fiber recruitment. The (c) tangent modulus curve in equibiaxial strain test shows a clear flattened section in the post-transition region. Tangent modulus curve for uniaxial extension is not shown due to similarities.}
+\label{c2:fig:3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%	 end FIGURE 	%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 \subsubsection{Elastin fiber model} \label{c2:sec:elastinfibermodel}
 
-    To determine the elastin fiber model (Sections \ref{sec:elastinconsiderations} Elastin fiber network, \ref{sec:collagenconsiderations} Single fiber models), we utilized the low stress region of the mechanical response. Due to the collagen fiber recruitment, we can retroactively determine the Elb of the recruitment distribution as the point when the cumulative distribution is less than 1\% (typically less than 3–8 kPa). Since collagen does not contribute significantly in this region, the response in this region can be considered entirely due to elastin (Fig. 4a). In pilot studies, we found that $d>1$ in equation \ref{eqn:elastinfiberlaw}. In fact, the exponent for the ventricularis and atrialis layer appeared to be different. Thus, we allowed d to vary during parameter estimation rather than being a set to a constant value.
+    To determine the elastin fiber model (Sections \ref{sec:elastinconsiderations} Elastin fiber network, \ref{sec:collagenconsiderations} Single fiber models), we utilized the low stress region of the mechanical response. Due to the collagen fiber recruitment, we can retroactively determine the Elb of the recruitment distribution as the point when the cumulative distribution is less than 1\% (typically less than 3–8 kPa). Since collagen does not contribute significantly in this region, the response in this region can be considered entirely due to elastin (Fig. \ref{c2:fig:4}a). In pilot studies, we found that $d>1$ in equation \ref{eqn:elastinfiberlaw}. In fact, the exponent for the ventricularis and atrialis layer appeared to be different. Thus, we allowed d to vary during parameter estimation rather than being a set to a constant value.
+
+
+%%%%%%%%%%%%%%%%%%%%	begin FIGURE 	%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{Images/chapter2/figure4.pdf}
+\caption{Example of the best fit from an anterior leaflet. The (a) equibiaxial stress protocol was fit with only the elastin (green) first, followed by fitting the collagen only while keeping the elastin fixed. (b) The final fit of all “physiological” protocols are shown. (c) The two extra-physiological protocols, which were not fit, is show. This suggests that the model have good predictive capability.}
+\label{c2:fig:4}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%	 end FIGURE 	%%%%%%%%%%%%%%%%%%%%
+
+
 
 
 \subsubsection{Parameter estimation part 1 – collagen fiber recruitment} \label{c2:sec:2254}
@@ -304,7 +342,7 @@
         \end{aligned}
         \end{equation}
         %-------------------	 end EQUATION 	-------------------%
-    We assumed in this first step that the recruitment distribution is orientation invariant, so that the collagen recruitment function $D(\mathbf{\xi},E_s) = D(\{\mu_r, \sigma_r, E_{lb}, E_{ub}\})$. $E_{ub}$ was determined by the transition point to the linear region (Fig. 3), leaving only $\mu r$, $\sigma r$ to be fit in this part of the parameter estimation. 
+    We assumed in this first step that the recruitment distribution is orientation invariant, so that the collagen recruitment function $D(\mathbf{\xi},E_s) = D(\{\mu_r, \sigma_r, E_{lb}, E_{ub}\})$. $E_{ub}$ was determined by the transition point to the linear region (Fig. \ref{c2:fig:3}), leaving only $\mu r$, $\sigma r$ to be fit in this part of the parameter estimation. 
     
     
 \subsubsection{Parameter estimation part 2 - full planar biaxial mechanical data set}
@@ -312,7 +350,7 @@
     Ideally, the measured ODFs $\Gamma(\theta)$ from the same specimen should be directly inserted into Eqn. \ref{eqn:multilayeredstressform}. However, in practice, we found that the ODFs had to be fitted to adjust for the specimen to specimen variability. Nevertheless, the mean best fitted ODFs can be compared to the mean measured ODFs to ensure that the estimate parameters are reasonable comparing to the true value. We expedited the process by assuming that the ODFs for each specimen is not significantly different from the true measured mean ODFs. Thus, the mean ODFs can be used as an initial guess and speed up the convergence to the optimal value. The use of a global algorithm will also ensure the optimized parameters do not become trapped at the mean value. Similarly, the estimated recruitment distribution $D(\mathbf{\xi}, x)$ is also obtain from independent specimens. The recruitment distribution parameters $\mathbf{\xi}$ are again used only as initial guesses and parameter validation.
     
 
-    Taking a similar approach to Fata et al. \cite{fata_insights_2014}, we first examined the equibiaxial stress protocol ($P_{11}:P_{22}$ = 1:1), which is the best approximation of the in vivo loading state of the MV. The low stress region as defined in section \ref{c2:sec:elastinfibermodel} was used to fit the elastin (Fig. 4a). This is easily identified as the nearly linear response before the exponential like collagen response. Furthermore, due to limitations concerning the elastin model form, where the elastin response can increase exponentially to unrealistically surpass the response of the collagen, the exponent parameter d for the elastin (Table \ref{c2tab:modelparameters}) was constrained to be less than 3.5. Next, the remaining high stress region was used to fit the collagen fiber response independently. Using this coupled approach, we were able to minimize the search space to the 12 parameters associated with collagen (Table \ref{c2tab:modelparameters}). Once a reliable estimate of the parameters was obtained for this protocol, the inner 3 protocols (3:4, 1:1, 4:3) were fit using the existing parameters as the initial guess. We then progressed to the remaining “physiological” protocols (1:2, 3:4, 1:1, 4:3, 2:1) once again keeping the previous parameters as the initial guess to obtain better estimated parameters.
+    Taking a similar approach to Fata et al. \cite{fata_insights_2014}, we first examined the equibiaxial stress protocol ($P_{11}:P_{22}$ = 1:1), which is the best approximation of the in vivo loading state of the MV. The low stress region as defined in section \ref{c2:sec:elastinfibermodel} was used to fit the elastin (Fig. \ref{c2:fig:4}a). This is easily identified as the nearly linear response before the exponential like collagen response. Furthermore, due to limitations concerning the elastin model form, where the elastin response can increase exponentially to unrealistically surpass the response of the collagen, the exponent parameter d for the elastin (Table \ref{c2tab:modelparameters}) was constrained to be less than 3.5. Next, the remaining high stress region was used to fit the collagen fiber response independently. Using this coupled approach, we were able to minimize the search space to the 12 parameters associated with collagen (Table \ref{c2tab:modelparameters}). Once a reliable estimate of the parameters was obtained for this protocol, the inner 3 protocols (3:4, 1:1, 4:3) were fit using the existing parameters as the initial guess. We then progressed to the remaining “physiological” protocols (1:2, 3:4, 1:1, 4:3, 2:1) once again keeping the previous parameters as the initial guess to obtain better estimated parameters.
     
     
     Preliminary attempts demonstrated that gradient algorithms were unable to converge to the proper solution and tended to become unable to handle local minimas. As a result, we employed the genetics-based differential evolution algorithm to perform the optimization, similar to Fata et al. \cite{fata_insights_2014}. To narrow down the search space and guide the optimization, initial guess was derived from the above mechanical studies (Section \ref{c2:sec:mechanicalstudies}). Parameter estimation was performed using a custom program written in Mathematica (Wolfram Research Corp.).
