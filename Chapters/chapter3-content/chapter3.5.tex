@@ -1,0 +1,54 @@
+\section{Model simplifications and parameter estimation}
+
+\subsection{Final form}
+
+    While in principle equation \ref{c3:eqn:416} can be implemented within a robust parameter estimation procedure, simplifications are clearly in order given its complexity (14 parameters). We first consider an equi-biaxial test wherein all fibre rotations are zero, so that $I_\mathrm{int}^r = 0$ The total interaction stress is thus given by just the following extensional contributions:
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}\label{c3:eqn:51}
+        \begin{aligned}
+        \mathbf{S}_\mathrm{int} =&\int_\theta \Gamma(\theta)\left[\frac{c_0c_1(\lambda-1)e^{c_1(\lambda-1)^2}}{\lambda}\mathbf{n}_0\otimes\mathbf{n}_0\right]\dif \theta  \\
+        &+ \int_\alpha\int_\beta \Gamma(\alpha)\Gamma(\beta)\left[d_0d_1(\lambda^2-1)e^{d_1(\lambda^2-1)^2}\left(\mathbf{n}_0\otimes\mathbf{n}_0 + \mathbf{m}_0\otimes\mathbf{m}_0\right)\right]\dif\alpha\dif\beta
+        \end{aligned}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+    In practice, we found that while the intra-ensemble form (first r.h.s. term) was used alone it was able to capture the equi-biaxial strain behaviour (figure 5), it was unable to capture the response from all test protocols. Moreover, given the similarity in form, the two components on the r.h.s. of equation (5.1) can capture similar responses. We thus chose to ignore the intra-ensemble stress contribution $\mathbf{S}_\mathrm{int}^e(c_0,c_1)$ removing two parameters. Next, while it is intuitive that fibre-ensemble rotations produce important contributions to the total tissue stress, closer analysis of equation \ref{c3:eqn:415} indicated that it will produce compressive stresses in the direction of lesser stretch. These characteristics were not consistent with any of the observed experimental data. Even when choosing various forms of $\Psi_\mathrm{int}^r$ we could not match the experimentally observed responses. Interestingly, only the $S_\mathrm{int}^{ee}$ contribution of equation \ref{c3:eqn:416} was found to model the interaction stresses well.
+    
+    Thus, we are left with the following interaction stresses:
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}\label{c3:eqn:52}
+        \begin{aligned}
+        \mathbf{S}_\mathrm{int}^e =& \int_\alpha\int_\beta \Gamma(\alpha)\Gamma(\beta) \\
+        &\times\left[d_0d_1(\lambda_\alpha\lambda_\beta-1)e^{d_1(\lambda_\alpha\lambda_\beta-1)^2}\left(\frac{\lambda_\beta}{\lambda_\alpha}\mathbf{n}_0\otimes\mathbf{n}_0 + \frac{\lambda_\alpha}{\lambda_\beta}\mathbf{m}_0\otimes\mathbf{m}_0\right)\right]\dif\alpha\dif\beta
+        \end{aligned}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+    leading to the following final form of the constitutive model:
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}\label{c3:eqn:53}
+        \begin{aligned}
+        \mathbf{S} =& \mathbf{S}_c + \mathbf{S}_{int} + \mathbf{S}_m  \\
+        =& \phi_c\frac{\eta_c}{\prescript{t}{1}{\lambda}} \int_{\theta_1} \Gamma_1(\mu_\Gamma, \sigma_\Gamma,\theta_1))
+        \frac{D_1(x)}{x}\left(\frac{\prescript{1}{0}{\lambda}}{x} - 1\right)\mathbf{n}_1\otimes\mathbf{n}_1 \dif x \dif \theta \\
+        +& \phi_c\int_\alpha\int_\beta \Gamma(\alpha)\Gamma(\beta) d_0d_1(\lambda_\alpha\lambda_\beta-1)e^{d_1(\lambda_\alpha\lambda_\beta-1)^2}\left(\frac{\lambda_\beta}{\lambda_\alpha}\mathbf{n}_0\otimes\mathbf{n}_0 + \frac{\lambda_\alpha}{\lambda_\beta}\mathbf{m}_0\otimes\mathbf{m}_0\right)\dif\alpha\dif\beta    \\
+        +&(1-\phi_c) \left(\mu_a(I_1 - 3)^{a-1} + \mu_b(I_1 - 3)^{b-1}\right)(\mathbf{I} - C_{33}\mathbf{C}^{-1}), \\
+        \end{aligned}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+        It is understood that $\mathbf{n}_0$ and $\mathbf{m}_0$ are referred to $\beta_1$ and that we merged the Lagrange multiplier with the matrix by assuming a planar tissue to simplify the formulation. This final model has 11 independent fitted parameters \{$\eta_c$, $\mu_\Gamma$, $\sigma_\Gamma$, $\mu_0$, $\sigma_0$, $d_0$, $d_1$, $\mu_a$, $\mu_b$, $a$, $b$\} and three directly determined parameters $\phi_c, \prescript{}{0}{\lambda}_{lb}, \prescript{}{0}{\lambda}_{ub}$ all with a physical meaning.
+        
+        
+        
+        
+\subsection{Parameter estimation procedures}
+
+    While at first glance this appears to be a major nonlinear optimization undertaking with all the usual pitfalls, we can use the following sequence to make actual parameter estimation quite tractable:
+        \begin{enumerate}
+            \item From the native tissue mechanical data, predict the collagen phase parameters $\{\eta_c, \mu_\Gamma, \sigma_\Gamma, \mu_0, \sigma_0\}$ using standard procedures \cite{fata_insights_2014}\cite{zhang_meso_2016}.
+            \item From the pre-transition collagen recruitment portion of all of the EXL tissue mechanical data, determine the matrix parameters $\{\mu_a, \mu_b, a, b\}$.
+            \item Taking the collagen and matrix responses, determine the interaction stress responses for all test protocols using $\mathbf{S}_\mathrm{int} = \mathbf{S} - \frac{1}{\phi_c}\left(\phi_c \prescript{1}{0}{S}_c + (1-\phi_c)\mathbf{S}_m\right)$
+            \item Using the results of step 3, determine the final two parameters ($d_0$ and $d_1$) by fitting equation \ref{c3:eqn:53} but only allowing them to vary while keeping the other terms to their above-fitted values.
+        \end{enumerate}
+    We found that this basic sequence ensured a robust parameter is obtained, because the entire model is never fitted at once. Moreover, this approach allowed us to separate the contributions to the stress of each of these mechanisms. As in our previous studies \cite{fata_insights_2014}\cite{zhang_meso_2016}, we employed the genetic based Differential Evolution algorithm in Mathematica to perform the optimization. All parameter estimation was performed using a custom program written in Mathematica (Wolfram Research Corp.).
+
+        
+        
