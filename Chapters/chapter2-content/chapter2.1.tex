@@ -12,4 +12,52 @@
     In contrast to collagen, elastin forms complex cross-linked fibrous networks with comparatively low modulus that are thought to assist in tissue recoil \cite{debelle_elastin_1999,debelle_structures_1999} and maintaining collagen fiber crimp \cite{vesely_comparison_1998,scott_aortic_1995}. Unlike large arteries, elastin is present in much lower quantities in valvular tissues compared to collagen \cite{sacks_biomechanics_2009,vesely_comparison_1998,lis_biochemical_1987,stella_biaxial_2007} and its role in valve mechanics is not well understood. Finally, we note that glycosaminoglycans (GAGs) are known to affect water retention and hysteresis in valvular tissues \cite{lovekamp_stability_2006,eckert_biomechanical_2013}, with the loss of GAGs known to reduce cuspal thickness and diminish rehydration capacity. However, GAGs are not a primary load bearing component, but appear act as a dampening mechanism to smooth rapid bending motions of the leaflet during valve function \cite{eckert_biomechanical_2013}.
     
     
-    Thus, a more complete understanding of MV function and failure must involve an improved understanding of how the above MV leaflet structures mechanically interact. This is best done through the mathematical development constitutive models that incorporate these features, which can aid both in providing insight and in forming a predictive modeling framework for their remodeling and failure. In the present, work we developed a novel comprehensive meso-scale (i.e. at the level of the fiber) structural constitutive model (MSSCM) for MV leaflets, focusing on the specific collagen and elastin fiber networks within each of its four distinct layers. We used a comprehensive set of structural and mechanical studies (Table 1) and a rigorous experimentally guided approach to tackle model formulation, parameter optimization and model validation (Fig. 1). The results were then validated at both the micro (fibril) and tissue-level using a novel approach based on a previous SAXS study on the mitral valve [20], [21], and again at the meso-scale using measured fiber structures. We also explored a novel extension to previous structural constitutive model approaches [37], [38], [39], [40] to allow for angular dependency of collagen fiber recruitment (orientation-variant) and assessed the model predictive capabilities under extra physiological loading that could occur in post-surgical scenarios.
+    Thus, a more complete understanding of MV function and failure must involve an improved understanding of how the above MV leaflet structures mechanically interact. This is best done through the mathematical development of constitutive models that incorporate these features, which can aid both in providing insight and in forming a predictive modeling framework for their remodeling and failure. In the present, work we developed a novel comprehensive meso-scale (i.e. at the level of the fiber) structural constitutive model (MSSCM) for MV leaflets, focusing on the specific collagen and elastin fiber networks within each of its four distinct layers. We used a comprehensive set of structural and mechanical studies (Table \ref{c2tab:experiments}) and a rigorous experimentally guided approach to tackle model formulation, parameter optimization and model validation (Fig. 1). The results were then validated at both the micro (fibril) and tissue-level using a novel approach based on a previous SAXS study on the mitral valve \cite{liao_relation_2007}, and again at the meso-scale using measured fiber structures. We also explored a novel extension to previous structural constitutive model approaches \cite{hollander_constitutive_2011,chen_micromechanics_2011,fata_insights_2014,sacks_incorporation_2003} to allow for angular dependency of collagen fiber recruitment (orientation-variant) and assessed the model predictive capabilities under extra physiological loading that could occur in post-surgical scenarios.
+    
+\begin{table}\label{c2tab:experiments}
+\centering
+\caption{Experimental Techniques and Deliverables}
+ \begin{tabular}{|m{.2in}|L{0.6in}|L{1in}|L{2.5in}|L{0.95in}|}
+ \hline
+ &  \textbf{Study}  & \textbf{Description}  & \textbf{Purpose}  & \textbf{Description}  \\
+ \hline
+ 
+ \multirow{2}{0.2in}{\rotatebox[origin=c]{90}{Structural}}
+ & SHG  
+ & Image of fluorescently labeled collagen and elastin 
+ & Image processing is done to quantify the fiber orientation distribution function of collagen and elastin within each layer. 
+ & ODF (used for validation) \\
+ \cline{2-5}
+ 
+ & Histology
+ & Collagen, elastin and Proteoglycans are stained in a transmural slice. 
+ & The image is separated into channels and is used to quantify the mass fractions and relative fraction of collagen and elastin of each layer. This is used directly in the model. 
+ & Mass fractions   \\
+ \hline
+ 
+ \multirow{1}{0.2in}{\rotatebox[origin=c]{90}{Mechanical}}
+ & SAXS
+ & X-ray scattering at a length comparable to D-period of the fiber
+ & The SAXS scatter pattern have periods related to the D-period of the collagen fibers. The D-period can be used to quantify the fiber-level strain and the fiber stiffness
+ & Collagen Fiber Modulus, (for validation)   \\
+ \cline{2-5}
+ 
+ & Planar Biax (EB)
+ & Biax with equal strain along both axes
+ & Under equibiaxial strain, we can recover the ensemble stress from the sum of the axial stresses. This allows us to model the ensemble stress directly to determine the fiber modulus and fiber recruitment.
+ & \multirow{1}{0.95in}{Collagen Fiber Modulus, Recruitment Parameters (For validation)}  \\
+ \cline{2-4}
+ 
+ & Uniaxial	
+ & Tissue is deformed along the preferred direction of the fibers
+ & With the tight splay, under uniaxial extension all fibers become nearly aligned to the test axis, allowing us to use a simplified model rather like using the ensemble stress to recover the fiber modulus and recruitment. 	& \\
+ \cline{2-5}
+ 
+ & Planar Biax (Multi-prot)	
+ & Data is taken over the physiological and extra-physiological range.	
+ & This with us the data to performed parameter estimation to determine the properties of the MV. The outer extra-physiological protocols can be used check the predictive ability of the model. 
+ & Layer dependent material properties.     \\
+ \hline
+ 
+ \end{tabular}
+\end{table}
