@@ -1,0 +1,326 @@
+\section{Elasticity tensor}\label{sec:elasticitytensor}
+
+	An analytical form for the elasticity tensor is extremely important for fast and convergent numerical simulations. A constitutive model without a smooth, continuous, and convex elasticity tensor can pose significant problems for simulation of nonlinear materials to converge quickly, or even to converge at all. The strain basis used for the model can have significant impact on the form of the elasticity tensor. Here, we derived the generalized form of the elasticity tensor for using the Green-Lagrange basis (Eqn. \ref{eqn:greenstrain}) and the Hencky strain basis (Eqn. \ref{eqn:henckystrains}). Note that this is the generalized form, which does not depend on the explicit form of the constitutive model, it is only a function of the strain basis and the response functions (derivatives of the strain energy function), whose form doesn't not have to be explicitly stated. The 9 response functions are:
+%=======	BEGIN Equation		=======%
+\begin{equation}
+\dpd{\Psi}{E_m}, \quad \dpd{\Psi}{E_n}, \quad \dpd{\Psi}{E_\phi}, \quad \frac{\partial^2\Psi}{\partial E_m^2}, \quad \frac{\partial^2\Psi}{\partial E_n^2}, \quad \frac{\partial^2\Psi}{\partial E_\phi^2}, \quad \frac{\partial^2\Psi}{\partial E_m\partial E_n}, \quad \frac{\partial^2\Psi}{\partial E_m\partial E_\phi}, \quad \frac{\partial^2\Psi}{\partial E_n\partial E_\phi}.
+\end{equation}
+%=======	END Equation		=======%
+    
+\subsection{Derivation with Green-Lagrange strain}
+	
+    The elasticity tensor is given by the second derivative of the strain energy function with respect to the right Cauchy strain. Using the chain rules, fully expanding all terms, and enforcing symmetry of partial derivatives, $\md{\Psi}{2}{E_m}{}{E_n}{} = \md{\Psi}{2}{E_n}{}{E_m}{}$, the generalized form for the elasticity tensor is given by 
+%=======	BEGIN Equation		=======%
+\begin{equation} \label{eqn:generalizedelasticityform}
+\begin{aligned}
+\dod[2]{\Psi}{\mathbf{C}} =& 
+	\dpd{\Psi}{E_m} \dod[2]{E_m}{\mathbf{C}} 
+    + \dpd{\Psi}{E_n} \dod[2]{E_n}{\mathbf{C}}
+    + \dpd{\Psi}{E_\phi} \dod[2]{E_\phi}{\mathbf{C}} \\
++& \dpd[2]{\Psi}{E_m} \dod{E_m}{\mathbf{C}}\dod{E_m}{\mathbf{C}} 
+	+ \dpd[2]{\Psi}{E_n} \dod{E_n}{\mathbf{C}} \dod{E_n}{\mathbf{C}} 
+    + \dpd{\Psi}{E_\phi} \dod{E_\phi}{\mathbf{C}} \dod{E_\phi}{\mathbf{C}} \\
++& \dmd{\Psi}{2}{E_m}{}{E_n}{} \left(\dod{E_n}{\mathbf{C}} \dod{E_m}{\mathbf{C}} + \dod{E_m}{\mathbf{C}} \dod{E_n}{\mathbf{C}}\right)   \\
+    +& \dmd{\Psi}{2}{E_m}{}{E_\phi}{} \left(\dod{E_\phi}{\mathbf{C}} \dod{E_m}{\mathbf{C}} + \dod{E_m}{\mathbf{C}} \dod{E_\phi}{\mathbf{C}}\right)  \\
+    +& \dmd{\Psi}{2}{E_n}{}{E_\phi}{} \left(\dod{E_n}{\mathbf{C}} \dod{E_\phi}{\mathbf{C}} + \dod{E_\phi}{\mathbf{C}} \dod{E_n}{\mathbf{C}}\right).  \\
+\end{aligned}
+\end{equation}
+%=======	END Equation		=======%
+To break this down, we begin with the derivatives of the Green-Lagrange strains, which are given by,
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{equation}\label{eqn:partialgreens}
+\begin{aligned}
+\dod{E_m}{\mathbf{C}} &= \frac{1}{2} \mathbf{m}\otimes\mathbf{m}	\\
+\dod{E_n}{\mathbf{C}} &= \frac{1}{2} \mathbf{n}\otimes\mathbf{n} \\
+\dod{E_\phi}{\mathbf{C}} &= \frac{1}{4} \left(\mathbf{m}\otimes\mathbf{n} + \mathbf{n}\otimes\mathbf{m} \right),
+\end{aligned}
+\end{equation}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+and 
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{equation}
+\dod[2]{E_m}{\mathbf{C}} = \dod[2]{E_n}{\mathbf{C}} = \dod[2]{E_\phi}{\mathbf{C}} = \mathbf{0}.
+\end{equation}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+Right away, the Green-Lagrange strains have the benefit of the second derivatives being zero, reducing the elasticity tensor (Eqn. \ref{eqn:generalizedelasticityform}) from 9 to 6 terms. Substituting with the partial derivatives (Eqn. \ref{eqn:partialgreens}) gives
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{equation}\label{eqn:greenelasticityform}
+\begin{aligned}
+\dod[2]{\Psi}{\mathbf{C}} =
+	& \frac{1}{4}\dpd[2]{\Psi}{E_m} \mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}	\\
+    &+ \frac{1}{8}\dmd{\Psi}{2}{E_m}{}{E_\phi}{} 
+    	\left(
+        	\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m} \right.\\
+            &\quad +\left.\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}
+            +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}
+        \right)	\\
+    &+ \frac{1}{4}\dmd{\Psi}{2}{E_m}{}{E_n}{} 
+    	\left(
+        	\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}
+        \right)	\\
+    &+ \frac{1}{16}\dpd[2]{\Psi}{E_\phi} 
+    	\left(
+        	\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m} \right. \\
+            &\quad \left.+\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}
+        \right)	\\
+    &+ \frac{1}{8}\dmd{\Psi}{2}{E_n}{}{E_\phi}{} 
+    	\left(
+        	\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n} \right. \\
+            &\quad +\left. \mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}
+        \right)	\\
+    &+ \frac{1}{4} \dpd[2]{\Psi}{E_n} \mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}	\\
+\end{aligned}
+\end{equation}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+
+
+\subsection{Derivation with Hencky strains}
+
+	The elasticity tensor when using the Hencky strains is much more complex. For start, the second derivatives of the Hencky strains are non-zero. The derivatives themselves are complex both in form and conceptually. The derivation of the derivatives is not straight forward. To make this simpler, we start with an alternative definition for the Hencky strains, which relates the 4 variables, $\gamma_1$, $\gamma_2$, $\gamma_3$, and $\mathbf{C}$.  
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{equation}\label{eqn:invariantset}
+\begin{aligned}
+    \gamma_1 &= \ln \left( \lambda_m \right), &  \lambda_m^2 &= \mathbf{m}\cdot\mathbf{C}\mathbf{m}  \\
+    \gamma_2 &= \ln \left( \lambda_n \right), &  \lambda_n^2 &= \mathbf{n}\cdot\mathbf{C}\mathbf{n} 
+                    - \lambda_m^2 \phi^2   \\
+    \gamma_3 &= \phi, & \phi &= \left( \lambda_m\right)^{-2}\mathbf{m}\cdot\mathbf{C}\mathbf{n}.
+\end{aligned}
+\end{equation}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+It is important here that with this definition, the vector basis, $\mathbf{m}$ and $\mathbf{n}$, are defined on the reference coordinate system, which does not change with deformation. By chain rule, the first derivatives are as followed,
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{subequations}
+\begin{align}
+\dod{\gamma_1}{\mathbf{C}} =& \dpd{\gamma_1}{\lambda_m}\dod{\lambda_m}{\mathbf{C}},	
+	& \dod{\lambda_m^2}{\mathbf{C}} =& \dpd{\lambda_m^2}{\mathbf{C}}:\dod{\mathbf{C}}{\mathbf{C}} 
+	+ \dpd{\lambda_m^2}{\lambda_n}\dod{\lambda_n}{\mathbf{C}}
+    + \dpd{\lambda_m^2}{\phi}\dod{\phi}{\mathbf{C}} \\
+\dod{\gamma_2}{\mathbf{C}} =& \dpd{\gamma_2}{\lambda_n}\dod{\lambda_n}{\mathbf{C}},	
+	& \dod{\lambda_n^2}{\mathbf{C}} =& \dpd{\lambda_n^2}{\mathbf{C}}:\dod{\mathbf{C}}{\mathbf{C}} 
+	+ \dpd{\lambda_n^2}{\lambda_m}\dod{\lambda_m}{\mathbf{C}}
+    + \dpd{\lambda_n^2}{\phi}\dod{\phi}{\mathbf{C}} \\
+\dod{\gamma_3}{\mathbf{C}} =& \dod{\phi}{\mathbf{C}},
+	& \dod{\phi}{\mathbf{C}} =& \dpd{\phi}{\mathbf{C}}:\dod{\mathbf{C}}{\mathbf{C}} 
+	+ \dpd{\phi}{\lambda_m}\dod{\lambda_m}{\mathbf{C}}
+    + \dpd{\phi}{\lambda_n}\dod{\lambda_n}{\mathbf{C}}. 
+\end{align}
+\end{subequations}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+First, note that all the partial derivatives are functions of each other. This is indeed problematic, but also note from equation \ref{eqn:invariantset} that $\lambda_m$ does not depend on $\lambda_n$ and $\phi$, and $\phi$ does not depend on $\lambda_n$. This means that the following partial derivatives are zero,
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{equation}\label{eqn:henckystraindependence}
+\begin{aligned}
+\dpd{\lambda_m}{\lambda_n} = \dpd{\lambda_m}{\phi} = \dpd{\phi}{\lambda_n} = 0,
+\end{aligned}
+\end{equation}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+allowing the equations to be solved. 
+
+	For the second derivatives, note from the definition we have above, the Hencky strains are only linear function of $\mathbf{C}$, thus their 2nd \emph{partial derivatives} are zero with respect to $\mathbf{C}$ only,
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{equation}
+\begin{aligned}
+\dpd{}{\mathbf{C}}\left(\dod{\gamma_1}{\mathbf{C}}\right) 
+	=\dpd{}{\mathbf{C}}\left(\dod{\gamma_2}{\mathbf{C}}\right)
+    =\dpd{}{\mathbf{C}}\left(\dod{\gamma_3}{\mathbf{C}}\right)
+    =0.
+\end{aligned}
+\end{equation}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+The second derivatives are thus defined to be,
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{subequations}
+\begin{align}
+\dod{}{\mathbf{C}}\left(\dod{\gamma_1}{\mathbf{C}}\right) =&
+    \dpd{}{\lambda_m}\left(\dod{\gamma_1}{\mathbf{C}}\right)\dod{\lambda_m}{\mathbf{C}}
+    + \dpd{}{\lambda_n}\left(\dod{\gamma_1}{\mathbf{C}}\right)\dod{\lambda_n}{\mathbf{C}}
+    + \dpd{}{\phi}\left(\dod{\gamma_1}{\mathbf{C}}\right)\dod{\phi}{\mathbf{C}}	\\
+\dod{}{\mathbf{C}}\left(\dod{\gamma_2}{\mathbf{C}}\right) =&
+    \dpd{}{\lambda_m}\left(\dod{\gamma_2}{\mathbf{C}}\right)\dod{\lambda_m}{\mathbf{C}}
+    + \dpd{}{\lambda_n}\left(\dod{\gamma_2}{\mathbf{C}}\right)\dod{\lambda_n}{\mathbf{C}}
+    + \dpd{}{\phi}\left(\dod{\gamma_2}{\mathbf{C}}\right)\dod{\phi}{\mathbf{C}}	\\
+\dod{}{\mathbf{C}}\left(\dod{\phi}{\mathbf{C}}\right) =&
+    \dpd{}{\lambda_m}\left(\dod{\phi}{\mathbf{C}}\right)\dod{\lambda_m}{\mathbf{C}}
+    + \dpd{}{\lambda_n}\left(\dod{\phi}{\mathbf{C}}\right)\dod{\lambda_n}{\mathbf{C}}
+    + \dpd{}{\phi}\left(\dod{\phi}{\mathbf{C}}\right)\dod{\phi}{\mathbf{C}} 
+\end{align}
+\end{subequations}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+Taking advantage of equation \ref{eqn:henckystraindependence}, the first and second derivatives of the Hencky strains are presented as followed:
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{subequations} \label{eqn:henckyderivatives}
+\begin{align}
+\dod{\gamma_1}{\mathbf{C}} =& \frac{1}{2\lambda_m^2} \mathbf{m}\otimes\mathbf{m}	\\
+\dod{\gamma_2}{\mathbf{C}} =& \frac{1}{2\lambda_n^2} \left(\mathbf{n}\otimes\mathbf{n} - \phi \left( \mathbf{m}\otimes\mathbf{n} + \mathbf{n}\otimes\mathbf{m}\right) + \phi^2 \mathbf{m}\otimes\mathbf{m} \right)	\\
+\dod{\gamma_3}{\mathbf{C}} =& \frac{1}{2\lambda_m^2} \left( \mathbf{m}\otimes\mathbf{n} + \mathbf{n}\otimes\mathbf{m} - 2\phi \mathbf{m}\otimes\mathbf{m}\right) \\
+\dod[2]{\gamma_1}{\mathbf{C}} =& -\frac{1}{2}\frac{1}{\lambda_m^4}\mathbf{m}\otimes\mathbf{m} \otimes \mathbf{m}\otimes\mathbf{m}	\\
+\begin{split}
+\dod[2]{\gamma_2}{\mathbf{C}} =& -\frac{1}{2}\frac{1}{\lambda_n^4} 
+    \left[
+    \mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}
+    -\phi \mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}
+    -\phi \mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}\right.   \\
+    &-\phi \mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}
+    -\phi \mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}   
+    +\phi^2 \mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n} \\
+    &\left.+\phi^2 \mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}
+    \right]\\
+    &-\left(\frac{1}{4}\frac{1}{\lambda_m^2\lambda_n^2} + \frac{1}{2}\phi^2\frac{1}{\lambda_n^4} \right)
+    \left[
+    \mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}
+    +\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m} \right. \\
+    &+\left. \mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}
+    +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}
+    \right]\\
+    &+\left(\frac{1}{2}\phi\frac{1}{\lambda_m^2\lambda_n^2} + \frac{1}{2}\phi^3\frac{1}{\lambda_n^4} \right)
+    \left[
+    \mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}
+    +\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m} \right. \\
+    &+\left. \mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}
+    +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}
+    \right]\\
+    &-\left(\phi^2\frac{1}{\lambda_m^2\lambda_n^2} + \frac{1}{2}\phi^4\frac{1}{\lambda_n^4} \right)
+    \left[
+    \mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}
+    \right]
+\end{split}\\
+\begin{split}
+\dod[2]{\gamma_3}{\mathbf{C}} =& -\frac{1}{2}\frac{1}{\lambda_m^4} \times \left(
+        \mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m} + \mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\right. \\
+        &+ \left.\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m} +
+        \mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n} - 
+        4\phi\mathbf{m}\otimes\mathbf{m} \otimes \mathbf{m}\otimes\mathbf{m} \right)
+\end{split}
+\end{align}
+\end{subequations}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+
+	Saving everyone from the algebra, without further ado, the most elegant form of the elasticity tensor for constitutive models based on the Hencky strains is, 
+%==========================================================%
+%-------------------	begin EQUATION 	-------------------%
+\begin{subequations} \label{eqn:elasticityhencky}
+\begin{align}
+\begin{split}
+\dod[2]{\Psi}{\mathbf{C}} =&
+	\psi_1 \mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}	\\
+    &+ \psi_2
+    	\left(
+        	\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m} \right. \\
+            &\quad +\left. \mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}
+            +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{m}
+        \right)	\\
+    &+ \psi_3
+    	\left(
+        	\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}
+        \right)	\\
+    &+ \psi_4
+    	\left(
+        	\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m} \right. \\
+            &\quad +\left.\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{m}
+        \right)	\\
+    &+ \psi_5
+    	\left(
+        	\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}\otimes\mathbf{n}
+            +\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{m}
+        \right)	\\
+    &+ \psi_6 \mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}\otimes\mathbf{n}
+\end{split}	\\
+\begin{split}
+\psi_1 =&
+        -\frac{1}{2}\frac{1}{\lambda_m^4}W^{(1)}
+        -\left(\frac{\phi^2}{\lambda_m^2\lambda_n^2}+\frac{1}{2}\frac{\phi^4}{\lambda_n^4}\right)W^{(2)}
+        +2\frac{\phi}{\lambda_m^4}W^{(3)}
+        +\frac{1}{4}\frac{1}{\lambda_m^4}W^{(11)}   \\
+        &+\frac{1}{4}\frac{\phi^4}{\lambda_n^4}W^{(22)}
+        +\frac{\phi^2}{\lambda_m^4}W^{(33)}
+        +\frac{1}{2}\frac{\phi^2}{\lambda_m^2\lambda_n^2}W^{(12)}
+        -\frac{\phi}{\lambda_m^4}W^{(13)}
+        -\frac{\phi^3}{\lambda_m^2 \lambda_n^2}W^{(23)}
+\end{split}	\\
+\begin{split}
+\psi_2 =&
+        \frac{1}{2}\left(\frac{\phi}{\lambda_m^2\lambda_n^2} + \frac{\phi^3}{\lambda_n^4}\right)W^{(2)}
+        -\frac{1}{2}\frac{1}{\lambda_m^4}W^{(3)}
+        -\frac{1}{4}\frac{\phi^3}{\lambda_n^4}W^{(22)}
+        -\frac{1}{2}\frac{\phi}{\lambda_m^4}W^{(33)}    \\
+        &-\frac{1}{4}\frac{\phi}{\lambda_m^2 \lambda_n^2}W^{(12)}
+        +\frac{1}{4}\frac{1}{\lambda_m^4}W^{(13)}
+        +\frac{3}{4}\frac{\phi^2}{\lambda_m^2 \lambda_n^2}W^{(23)}
+\end{split}	\\
+\psi_3 =&
+        -\frac{1}{2}\frac{\phi^2}{\lambda_n^4}W^{(2)}
+        +\frac{1}{4}\frac{\phi^2}{\lambda_n^4}W^{(22)}
+        +\frac{1}{4}\frac{1}{\lambda_m^2 \lambda_n^2}W^{(12)}
+        -\frac{1}{2}\frac{\phi}{\lambda_m^2 \lambda_n^2}W^{(23)}	\\
+\psi_4 =&
+        -\left(\frac{1}{4}\frac{1}{\lambda_m^2\lambda_n^2}+\frac{1}{2}\frac{\phi^2}{\lambda_n^4}\right)W^{(2)}
+        +\frac{1}{4}\frac{\phi^2}{\lambda_n^4}W^{(22)}
+        +\frac{1}{4}\frac{1}{\lambda_m^4}W^{(33)}
+        -\frac{1}{2}\frac{\phi}{\lambda_m^2 \lambda_n^2}W^{(23)}	\\
+\psi_5 =&
+        \frac{1}{2}\frac{\phi}{\lambda_n^4}W^{(2)}
+        -\frac{1}{4}\frac{\phi}{\lambda_n^4}W^{(22)}
+        +\frac{1}{4}\frac{1}{\lambda_m^2 \lambda_n^2}W^{(23)}	\\
+\psi_6 =&
+        -\frac{1}{2}\frac{1}{\lambda_n^4}W^{(2)}
+        +\frac{1}{4}\frac{1}{\lambda_n^4}W^{(22)}
+\end{align}
+\end{subequations}
+%-------------------	 end EQUATION 	-------------------%
+%==========================================================%
+where $W^{ij} = \md{\Psi}{2}{\gamma_i}{}{\gamma_j}{}$.
+
+\paragraph{Some final remarks} 
+	The elasticity tensor for the Hencky strains (Eqn. \ref{eqn:elasticityhencky}) are somewhat complicated, but most terms are weighted by $\gamma_3$, which is the shear angle $\phi$. Under no shear, the form for the elasticity tensor reduces significantly, to similar in form to the Green-Lagrange strains (Eqn. \ref{eqn:greenelasticityform}). The shear angle is typically a small value as well, making most terms in the elasticity tensor small as well. However, they are still necessary to accurately compute the elasticity tensor and are representative of the coupling between the strains components. 
+    
+    More interesting is perhaps that the Hencky strains overall leads to less covariance in model parameters overall, despite there being many more coupling terms than the Green-Lagrange strain. This is indicative of the covariance within the model form and of the tissue, which in turn is necessary to reproduce soft tissue responses. Due to this natural covariance of the tissues themselves, truly non-covariant models are not feasibly attainable. The level of covariance demonstrated by $\Psi_{eff}$ (Eqn. \ref{eqn:finalexponentialmodelformscaled}) within are likely close to optimal without sacrificing for addition model complexity. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% loss of benefits for the correlation between parameters from polynomial to exponential model. 

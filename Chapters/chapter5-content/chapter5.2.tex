@@ -18,7 +18,7 @@
 \end{enumerate}
     The smallest set of kinematic variables that can describe a wide range of soft tissues and deformations using the same simple form is ideal. 
 
-    The invariants and pseudo-invariants of the right or left Cauchy Green tensor is very popular for the constitutive models of soft tissues. Indeed, we use them often with our structural models \cite{fata_insights_2014, zhang_meso_2016, Avazmohammadi2017b, sacks_novel_2016, zhang_modeling_2017}. There is a large number of invariants, each describes a facet of deformation: isotropic, volumetric strain, anisotropic, or interactions between them. The breadth of choices allow for more freedom in selecting a best combination when modeling specific soft tissues. However, there are simply too many invariants, and many of which are highly covariant. This does not lend itself for minimizing the number of parameters and the parameter covariance in a single fully generalized form. 
+    The invariants and pseudo-invariants of the right or left Cauchy Green tensor is very popular for the constitutive models of soft tissues. Indeed, we use them often with our structural models \cite{fata_insights_2014, zhang_meso_2016, avazmohammadi_novel_2017, sacks_novel_2016, zhang_modeling_2017}. There is a large number of invariants, each describes a facet of deformation: isotropic, volumetric strain, anisotropic, or interactions between them. The breadth of choices allow for more freedom in selecting a best combination when modeling specific soft tissues. However, there are simply too many invariants, and many of which are highly covariant. This does not lend itself for minimizing the number of parameters and the parameter covariance in a single fully generalized form. 
     
     
     It's here that using the components of the strain tensors is more practical for our approach. Although all strains are equivalent for constitutive modeling because they can be expressed with respect to each other, different strain tensors can have different effects when used directly in place of each other in the same form. For us, with the purpose of keeping the constitutive model form simple for implementation, the Green Lagrange strains are the most practical. Based on preliminary testing (Appendix \ref{sec:greenvshencky}), the Green Lagrange strains result in the simplest 2nd Piola Kirchhoff stress and elasticity tensor forms, and have behaviors in that closely matches the response of collagen fibers in soft tissues when under compression. We examined these aspects more closely in Appendix \ref{sec:greenvshencky}. 
@@ -170,13 +170,13 @@ Q		=& b_1 E_m^2 + b_2 E_n^2 + b_3 E_\phi^2 + b_4 E_m E_n + b_5 E_m^4 + b_6 E_n^4
 %-------------------	begin EQUATION 	-------------------%
 \begin{equation}\label{eqn:convexitycriteria}
 \begin{aligned}
-\dpd[2]{Q}{E_m} \geq 0, \quad
+&\dpd[2]{Q}{E_m} \geq 0, \quad
 \det
 \begin{bmatrix}
 \dpd[2]{Q}{E_m} & \dmd{Q}{2}{E_m}{}{E_n}{}\\
 \dmd{Q}{2}{E_m}{}{E_n}{} & \dpd[2]{Q}{E_n}\\
-\end{bmatrix} \geq0, \quad
-\det
+\end{bmatrix} \geq0, \quad  \\
+&\det
 \begin{bmatrix}
 \dpd[2]{Q}{E_m} & \dmd{Q}{2}{E_m}{}{E_n}{} & \dmd{Q}{2}{E_m}{}{E_\phi}{}\\
 \dmd{Q}{2}{E_m}{}{E_n}{} & \dpd[2]{Q}{E_n} & \dmd{Q}{2}{E_n}{}{E_\phi}{}\\
@@ -351,13 +351,13 @@ Thus, we also introduce a $Q_{max}$ such that,
 %-------------------	begin EQUATION 	-------------------%
 \begin{equation} \label{eqn:finalexponentialmodelformscaled}
 \begin{aligned}
-\Psi_{eff} 	=& c_0 \left(e^{Q} - 1\right) \\
-            =& c_0^\prime e^{-Q_{max}}\left(e^{Q} - 1\right)    \\
-Q		=& b_1 E_m^2 + b_2 E_n^2 + b_3 E_\phi^2 + b_4 E_m E_n + b_5 E_m^4 + b_6 E_n^4 + b_7 E_m^3 E_n + b_8 E_m^2 E_n^2 + b_9 E_m E_n^3	\\
-	&+ b_{10} E_\phi^4 + b_{11} E_m^2E_\phi^2 + b_{12} E_n^2 E_\phi^2 + b_{13} E_m E_n E_\phi^2 \\
-Q		=& b_1 (E_m^{max})^2 + b_2 (E_n^{max})^2 + b_3 (E_\phi^{max})^2 + b_4 (E_m^{max}) (E_n^{max}) + b_5 (E_m^{max})^4 + b_6 (E_n^{max})^4   \\ 
-    &+ b_7 (E_m^{max})^3 (E_n^{max}) + b_8 (E_m^{max})^2 (E_n^{max})^2 + b_9 (E_m^{max}) (E_n^{max})^3	\\
-	&+ b_{10} (E_\phi^{max})^4 + b_{11} (E_m^{max})^2(E_\phi^{max})^2 + b_{12} (E_n^{max})^2 (E_\phi^{max})^2 + b_{13} (E_m^{max}) (E_n^{max}) (E_\phi^{max})^2,
+\Psi_{eff} 	=& c_0 \left(e^{Q} - 1\right) = c_0^\prime e^{-Q_{max}}\left(e^{Q} - 1\right)    \\
+Q		=& b_1 E_m^2 + b_2 E_n^2 + b_3 E_\phi^2 + b_4 E_m E_n + b_5 E_m^4 + b_6 E_n^4 + b_7 E_m^3 E_n + b_8 E_m^2 E_n^2 \\ 
+&+ b_9 E_m E_n^3 + b_{10} E_\phi^4 + b_{11} E_m^2E_\phi^2 + b_{12} E_n^2 E_\phi^2 + b_{13} E_m E_n E_\phi^2 \\
+Q		=& b_1 (E_m^{max})^2 + b_2 (E_n^{max})^2 + b_3 (E_\phi^{max})^2 + b_4 (E_m^{max}) (E_n^{max}) + b_5 (E_m^{max})^4   \\
+    &+ b_6 (E_n^{max})^4 + b_7 (E_m^{max})^3 (E_n^{max}) + b_8 (E_m^{max})^2 (E_n^{max})^2 + b_9 (E_m^{max}) (E_n^{max})^3	\\
+	&+ b_{10} (E_\phi^{max})^4 + b_{11} (E_m^{max})^2(E_\phi^{max})^2 + b_{12} (E_n^{max})^2 (E_\phi^{max})^2    \\ 
+	&+ b_{13} (E_m^{max}) (E_n^{max}) (E_\phi^{max})^2,
 \end{aligned}
 \end{equation}
 %-------------------	 end EQUATION 	-------------------%
@@ -380,7 +380,7 @@ where parameter estimation will be done for $c_0^\prime$ instead of $c_0$. Compu
 %-----------------------------------------------------------
 \subsection{Optimal \textit{in silico} loading paths for parameter estimation}\label{sec:optimaldesign}
 
-	Another technique for improving the parameter estimation process for determining $\Psi_{eff}$ from respective micro-models is establishing optimal loading paths. An example is the work of Avazmohammadi \cite{Avazmohammadi2017b}, where optimal experimental design is used to 1) minimize the amount of data necessary and 2) improve model parameter covariance for parameter estimation. Just like one of the most important question to ask before performing any mechanical testing is how much and what kind of data is necessary, we should also be selective with our choice of sampling points for parameter estimation. The theory for optimal design of experiment is well-studied and documented \cite{lanir_optimal_1996, zhu_d_2014}. Vast majority of the methods for optimal design uses D-optimality as the design variable,
+	Another technique for improving the parameter estimation process for determining $\Psi_{eff}$ from respective micro-models is establishing optimal loading paths. An example is the work of Avazmohammadi \cite{avazmohammadi_novel_2017}, where optimal experimental design is used to 1) minimize the amount of data necessary and 2) improve model parameter covariance for parameter estimation. Just like one of the most important question to ask before performing any mechanical testing is how much and what kind of data is necessary, we should also be selective with our choice of sampling points for parameter estimation. The theory for optimal design of experiment is well-studied and documented \cite{lanir_optimal_1996, zhu_d_2014}. Vast majority of the methods for optimal design uses D-optimality as the design variable,
 %==========================================================%
 %-------------------	begin EQUATION 	-------------------%
 \begin{equation}\label{eqn:doptimality}
@@ -493,13 +493,13 @@ The second Piola Kirchhoff stress, $\mathbf{S}=2\frac{\partial\Psi}{\partial\mat
 & \times \left[ \left\lbrace 
 \int\displaylimits_1^{\lambda_\alpha} \int\displaylimits_1^{\lambda_\beta} 
 \frac{2 \lambda_\beta D(x_\alpha) D(x_\beta)}{x_\alpha x_\beta} 
-\left( \frac{\lambda_\alpha}{x_\alpha} \frac{\lambda_\beta}{x_\beta} - 1\right) \mathrm{d}x_\alpha \, \mathrm{d}x_\beta 
-+\int\displaylimits_1^{\lambda_\beta} D(x_\beta) \left( \frac{\lambda_\beta}{x_\beta} -1  \right)^2 \mathrm{d}x_\beta \right\rbrace \right.  \frac{\mathbf{n}_\alpha \otimes \mathbf{n}_\alpha}{\lambda_\alpha}  \\
+\left( \frac{\lambda_\alpha}{x_\alpha} \frac{\lambda_\beta}{x_\beta} - 1\right) \mathrm{d}x_\alpha \, \mathrm{d}x_\beta\right.\right.   \\
+&\quad\left.\left.+\int\displaylimits_1^{\lambda_\beta} D(x_\beta) \left( \frac{\lambda_\beta}{x_\beta} -1  \right)^2 \mathrm{d}x_\beta \right\rbrace \right.  \frac{\mathbf{n}_\alpha \otimes \mathbf{n}_\alpha}{\lambda_\alpha}  \\
 & + \left. \left\lbrace
 \int\displaylimits_1^{\lambda_\alpha} \int\displaylimits_1^{\lambda_\beta} 
 \frac{2 \lambda_\alpha D(x_\alpha) D(x_\beta)}{x_\alpha x_\beta} 
-\left( \frac{\lambda_\alpha}{x_\alpha} \frac{\lambda_\beta}{x_\beta} - 1\right) \mathrm{d}x_\alpha \, \mathrm{d}x_\beta 
-+ \int\displaylimits_1^{\lambda_\alpha} D(x_\alpha) \left( \frac{\lambda_\alpha}{x_\alpha} -1  \right)^2 \mathrm{d}x_\alpha \right\rbrace \frac{\mathbf{n}_\beta \otimes \mathbf{n}_\beta}{\lambda_\beta}  \right] \mathrm{d}\alpha \, \mathrm{d}\beta\\
+\left( \frac{\lambda_\alpha}{x_\alpha} \frac{\lambda_\beta}{x_\beta} - 1\right) \mathrm{d}x_\alpha \, \mathrm{d}x_\beta\right.\right.   \\
+&\quad \left.\left. + \int\displaylimits_1^{\lambda_\alpha} D(x_\alpha) \left( \frac{\lambda_\alpha}{x_\alpha} -1  \right)^2 \mathrm{d}x_\alpha \right\rbrace \frac{\mathbf{n}_\beta \otimes \mathbf{n}_\beta}{\lambda_\beta}  \right] \mathrm{d}\alpha \, \mathrm{d}\beta\\
 + & \phi_\mathrm{mat} \eta_M \left[\left(\left( I_1 - 3\right)^{a - 1} + r \left( I_1 - 3\right)^{b - 1}\right) \left( \mathbf{I} - C_{33}\mathbf{C}^{-1}\right)  \right],\\
 \end{aligned}
 \end{equation}
@@ -532,14 +532,15 @@ The second Piola Kirchhoff stress, $\mathbf{S}=2\frac{\partial\Psi}{\partial\mat
 	The objective function we use is 
 %==========================================================%
 %-------------------	begin EQUATION 	-------------------%
-\begin{subequations}\label{eqn:objectivefunction}
-\begin{gather}
-S_m = \dpd{\Psi}{E_m} = \mathbf{m}_0\cdot\mathbf{S}\mathbf{m}_0,
-	\quad S_n = \dpd{\Psi}{E_n} = \mathbf{n}_0\cdot\mathbf{S}\mathbf{n}_0,
-    \quad S_\phi = \dpd{\Psi}{E_\phi} = 2\mathbf{m}_0\cdot\mathbf{S}\mathbf{n}_0 \label{eqn:responsefunctions}\\
-\mathcal{F} = \sum_i^n \left(S_m(\hat{E}_M^i, \hat{E}_S^i, \hat{E}_\phi^i) - \hat{S}_M^i \right)^2 + \left(S_n(\hat{E}_M^i, \hat{E}_S^i, \hat{E}_\phi^i) - \hat{S}_S^i \right)^2 + \left(S_\phi(\hat{E}_M^i, \hat{E}_S^i, \hat{E}_\phi^i) - \hat{S}_\phi^i \right)^2
-\end{gather}
-\end{subequations}
+\begin{equation}\label{eqn:objectivefunction}
+\begin{aligned}
+S_m =& \dpd{\Psi}{E_m} = \mathbf{m}_0\cdot\mathbf{S}\mathbf{m}_0,
+	\  S_n = \dpd{\Psi}{E_n} = \mathbf{n}_0\cdot\mathbf{S}\mathbf{n}_0, 
+    \  S_\phi = \dpd{\Psi}{E_\phi} = 2\mathbf{m}_0\cdot\mathbf{S}\mathbf{n}_0 \\
+\mathcal{F} =& \sum_i^n \left(S_m(\hat{E}_M^i, \hat{E}_S^i, \hat{E}_\phi^i) - \hat{S}_M^i \right)^2 + \left(S_n(\hat{E}_M^i, \hat{E}_S^i, \hat{E}_\phi^i) - \hat{S}_S^i \right)^2     \\
+    &+ \left(S_\phi(\hat{E}_M^i, \hat{E}_S^i, \hat{E}_\phi^i) - \hat{S}_\phi^i \right)^2
+\end{aligned}
+\end{equation}
 %-------------------	 end EQUATION 	-------------------%
 %==========================================================%
     This removes rigid body rotation and puts the stresses along the material axes, giving the response functions and minimizes covariance between the parameters during optimization. Other possible options include the log of the L2-norm, the log-norm presented by Aggarwal \cite{aggarwal_improved_2017}, and L2-norm of the strain energy and other stresses.
