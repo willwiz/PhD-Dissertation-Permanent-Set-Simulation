@@ -1,3 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Permanent set model results}
 \subsection{Model fit and predictive capabilities}
 
@@ -9,35 +14,40 @@ The mechanical response for the stress controlled XD specimens did not match as 
 	However, given none of the mechanical data was involved in the parameter estimate this was nevertheless a very good prediction. 
 	For example, when comparing the model to the experimental data by extrapolating the loading path of the equibiaxial protocol and finding the peak strain at 1MPa, the $R^2$ value increases to 0.93. 
 	One the other hand, the predicted mechanical response for the PD controlled data were very good ($R^2 = 0.95$) (Fig. \ref{fig:stressPDmech}), suggesting that our model was able to capture the underlying mechanisms. 
-	These results agree with our hypothesis that the initial changes in the mechanical response (in the first 50 million cycles) can be predicted by the change in microstructure alone, and that structural damage is low at this stage. 
+	These results agree with our hypothesis that the initial changes in the mechanical response (in the first 50 million cycles) can be predicted by the change in collagen fiber architecture alone, and that structural damage is low at this stage. 
+
+
 \begin{figure}[hbt]
 \centering
-\centerline{\includegraphics[width=0.75\paperwidth]{Images/chapter4/figure13}}
-\caption{Results of the strain controlled cycling data, shown how the A) model fits the permanent set deformation at 30 million cycles and predicts the 65 million cycles time point(in box), as well as C) how the model predicts the mechanical response at 65 million cycles using material parameters from the B) 0 cycle time point.}
+\centerline{\includegraphics[width=\textwidth]{Images/chapter4/figure14}}
+\caption{Results of the strain controlled cycling data, shown how the A) model fits the permanent set deformation at 30 million cycles and predicts the 65 million cycles time point (hollow points). The dotted line shows the model prediction with $0.5k$ and the dashed line shows the model prediction with $2k$ and C) Shows how the model predicts the mechanical response at 65 million cycles using material parameters from the B) 0 cycle time point.}
 \label{fig:strainresults}
 \end{figure}
+
 \begin{figure}[hbt]
 \centering
-\centerline{\includegraphics[width=0.75\paperwidth]{Images/chapter4/figure14}}
-\caption{A) The model fit for the permanent set deformation at both 20 and 50 million cycles for the stress controlled XD cycled specimens. B) Comparison of the permanent set rate constant between the strain controlled and stress controlled specimens. C) The predicted permanent set deformation for the PD cycled specimens using the rate constant from fitting the XD cycled specimens. }
+\centerline{\includegraphics[width=\textwidth]{Images/chapter4/figure15}}
+\caption{) Comparison of the permanent set rate constant between the strain controlled and stress controlled specimens. B) The model fit for the permanent set deformation at both 20 and 50 million cycles for the stress controlled XD cycled specimens.  C) The predicted permanent set deformation for the PD cycled specimens using the rate constant from fitting the XD cycled specimens. }
 \label{fig:stressXDdef}
 \end{figure}
+
 \begin{figure}[hbt]
 \centering
-\centerline{\includegraphics[width=0.75\paperwidth]{Images/chapter4/figure15}}
+\centerline{\includegraphics[width=\textwidth]{Images/chapter4/figure16}}
 \caption{A) Best fit of the mechanical response at 0 cycle for the material parameters ($r^2 = 0.98$). The predicted mechanical response for the representative PD cycled specimen at B) 20 ($r^2 = 0.87$) and C) 50 million cycles. ($r^2 = 0.82$)}
 \label{fig:stressPDmech}
 \end{figure}
 
+
 \subsection{Parametric study results}
 	By extending the cycling duration in the parametric study, we found that the permanent set deformation reaches an assymptote after approximately 70 million cycles when loading along the PD. 
 	This threshold slightly exceeds the lower bound for collagen recruitment. 
-	We estimate that around 2.6\% of collagen fiber are recruited when the permanent set deformation reaches this threshold (Fig. \ref{fig:parametric}). 
-	This suggests that collagen fibers are limiting the maximum change in geometry that can occur, and that the lower bound of the collagen fiber recruitment can serve as an estimated bound for the change in geometry due to the permanent set effect in BHVs, as collagen fibers start resisting further deformation of the exogenously crosslinked the matrix. Once this bound is exceed, some collagen fibers can exist perennially in an extended state. This could be a potential mechanism in exacerbating the rate of damage to the collagen fiber architecture. 
+	We estimate that around 2.6\% of collagen fiber are recruited when the permanent set deformation reaches this threshold (Fig. \ref{fig:parametric}). This suggests that collagen fibers are limiting the maximum change in geometry that can occur, and that the lower bound of the collagen fiber recruitment can serve as an estimated bound for the changes in geometry due to the permanent set effect in BHVs. Once this bound is exceed, some collagen fibers can exist perennially in an extended state. This could be a potential mechanism in exacerbating the rate of damage to the collagen fiber architecture. This can have significant implications in optimizing BHV design. By optimizing the BHV geometry for the post permanent set state, we can minimize the stresses in for the BHV for the majority of the BHV life span, minimizing structural damage and potentially increasing BHV durability. 
+
 
 \begin{figure}[hbt]
 \centering
-\includegraphics[width=0.35\paperwidth]{Images/chapter4/figure16}
+\includegraphics[width=4in]{Images/chapter4/figure17}
 \caption{The results of the parametric study. The red solid line shows the lower bound for the collagen fiber slack stretches and the red dashed line show the approximate cycle when the permanent set stretches reach an assymptote.}
 \label{fig:parametric}
 \end{figure}

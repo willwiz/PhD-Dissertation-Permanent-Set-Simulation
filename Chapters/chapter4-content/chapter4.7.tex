@@ -1,8 +1,13 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Discussions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Discussion}
 
 \subsection{Permanent set is sufficient to describe early stages of BHV cycling}
-	The most important result from this study is that permanent set alone is sufficient to explain all responses due to cyclic loading in the range of 0 to 65 million cycles. 
-	This strongly suggests that there is no detectable damage to the collagen fiber architecture, and that the overall collagen fiber architecture stays intact and convected under affine kinematics. 
+	The most important result from this study is that a permanent set mechanism in the EXL matrix alone is sufficient to explain the responses due to cyclic loading in the range of 0 to 65 million cycles. 
+	This further suggests that there is no detectable damage to the collagen fiber architecture, and that the overall collagen fiber architecture stays intact and convected under affine kinematics. 
 	This is not unexpected, as we previously found dense collagenous tissues to behave affinely when deforming in the physiological range \cite{lee_presence_2015}. 
 	Although the permanent set effect is very noticeable in the early stages of the cyclic loading, it still takes millions of cycles; in other words, years. 
 	Due to the time scale difference between the opening and closing of heart valves versus permanent set, BHVs always deforms quasi-statically, which means it always follows affine kinematics. 
@@ -10,34 +15,38 @@
 	This is all extremely important, as this allows us to completely separate permanent set from other cyclic loading effects and independently determine the permanent set rate constant just from the cyclic loading data in the early stage. 
 
 \subsection{Lack of detectable structural damage}
-	We observed in multiple instances \cite{sun_response_2004, sellaro_effects_2007} that there are molecular conformation changes in the collagen fiber during this early stage. 
-	This suggests that while effects of collagen fiber damage are not detectable, it remains an ongoing but much slower process in comparison to permanent set. 
-	Significant tearing and delamination are observed by Sacks and Smith \cite{sacks_effects_1998} after 500 million cycles, but this corresponds to the late stage of cyclic loading (Fig. \ref{fig:hypothesis}) during which we do not have extant mechanical data for constitutive modeling. 
+	We have observed that there are molecular conformation changes in the collagen fiber during this early stage \cite{sun_response_2004, sellaro_effects_2007}. 	This suggests that while effects of collagen fiber damage are not detectable at the bulk level, it remains an ongoing but much slower process in comparison to permanent set. 
+	Significant tearing and delamination have been observed after 500 million cycles \cite{sacks_effects_1998}, but this corresponds to the late stage (Fig. \ref{fig:hypothesis}), for which we do not have extant mechanical data. 
 	There are no other existing experimental data quantifying the intrinsic structural damage in BHVs during cyclic loading. 
 	This is not surprising as actual structural damage is difficult to distinguish from other processes such as permanent set. 
-	The relation between molecular changes and mechanical response is not well understood. 
-	This requires multi-scale modeling for exogenously crosslinked tissue, which is also an extremely challenging task with no published studies currently. 
+	The relation between molecular changes and mechanical response is not well understood.
 	The most promising way of quantifying structural damage is through constitutive modeling and simulations. 
-	Structural models can separate structural damage and permanent set, but we do not have sufficiently data at high cycle numbers where structural damage is detectable. 
-	This remains an important extension for the model in the future. 
+	Structural models can separate structural damage and permanent set, but we do not have sufficient data at high cycle numbers where structural damage is detectable. This remains an important extension for the model in the future. 
 
-\subsection{Permanent set is driven by the scission-healing of the matrix}
-	One important assumption in our model is that permanent set only occurs in the matrix due to scission-healing. 
+\subsection{Permanent set is driven by the scission-healing of the EXL matrix}
+	One important assumption in our model is that permanent set only occurs in the EXL matrix due to scission-healing. 
 	Based on our theory for permanent set, the process is driven entirely by the first order kinetics of the crosslinking reactions of GLUT leading to scission-healing, as well as the kinematics involved in the reference state evolution. 
 	Our results indicate that these mechanisms and permanent set can indeed explain the response to cyclic loading.
-	This highlights the importance of understanding the effects of GLUT crosslinks and its role in the cyclic loading response of BHVs. 
+	This highlights the importance of understanding the effects of GLUT crosslinks and their role in the cyclic loading response of BHVs. 
 	The use of GLUT was originally intended for suppressing immunogenicity by crosslinking antigen within BP xenographs, but also has the fortunate consequence of stiffening the mechanical response of the BHV. 
-	Unfortunately, the scission-healing behavior of GLUT also playing a major role in the cyclic loading of BHVs. 
+	Unfortunately, the scission-healing behavior of GLUT also plays a major role in the cyclic loading of BHVs. 
 	By severely changing the geometry of the BHV in the first 1-2 years, it strongly influences the cyclic loading response of BHVs at latter stages. 
-	It is difficult to properly design BHVs without accounting for the permanent set deformations caused by GLUT's scission-healing. 
+	It may be possible to design BHVs to accommodate permanent set deformations caused by GLUT's scission-healing. 
 	Alternative exogenous crosslinking chemistry \cite{tam_fixation_2017, tam_novel_2015} may be an important area for technological advancement of BHVs. 
-	Protecting the optimal mechanical response of the BHVs by reducing the impact permanent set can significantly limit the peak stress on BHVs and protect the underlying tissue microstructure. 
+	Protecting the optimal mechanical response of the BHVs by reducing the impact of permanent set can significantly limit the peak stress on BHVs and protect the underlying tissue microstructure. 
 
-\subsection{Recruitment of collagen fibers limit permanent set}
-	Our parametric study of permanent set suggests that collagen fibers may play a significant role in limiting the effect of permanent set on the geometry of BHVs. 
-	The stiffness of collagen fibers are over three magnitudes higher than the exogenously crosslinked matrix. 
-	As collagen fibers are recruited, residual stress starts accumulating between collagen fibers and the matrix. 
-	However, due to the significant difference in stiffness, the exogenously crosslinked matrix cannot extend the collagen fibers by a significant amount. 
-	In addition, we generally found significant collagen fiber structural reserves in collagenous tissue \cite{zhang_meso_2016}. From the parametric study, no more than 2-4\% of collagen fibers are straightened under physiological loading levels (up to 1 MPa). 
-	Also, taking into account the rapid recruitment of native collagen fibers (collagen fibers do not extend by more than 5-8\% strain before breaking \cite{buehler_atomistic_2006}), the collagen fiber architecture serves as a barrier in limiting the changes in geometry due to permanent set. 
-	This potentially gives us a way of predicting and designing BHVs based on the expected maximum permanent set deformation. 
+\subsection{Collagen fiber recruitment can limit the maximum change in geometry due to permanent set}
+	One of the most important finding from our permanent set model is that collagen fibers may play a significant role in limiting the changes in BHV geometry due to the permanent set effect. Our parametric study results shows that the permanent set deformation eventually reaches a threshold asymptotically (Fig. \ref{fig:parametric}). This is due to the different parts of the EXL matrix as well as the collagen fibers separating into different reference configurations due to the permanent set effect. Although the bulk tissue as a whole is at a stress free equilibrium, there exists some internal stress between the different parts of the EXL matrix and the collagen fibers as a result of the different reference states. If the changes in geometry is sufficiently large, some collagen fibers will be recruited and exert compressive stress on the EXL matrix. However, since the stiffness of collagen fibers is over three magnitudes higher than the EXL matrix, the deformation of collagen fibers due to the internal stress is insignificant. As such, the recruitment of collagen fibers can resist against further changes in the geometry of the tissue due to permanent set. In addition, we generally found significant collagen fiber structural reserve in collagenous tissue \cite{zhang_meso_2016}. From the parametric study, no more than 2-4\% of collagen fibers are straightened under physiological loading levels (up to 1 MPa) due to permanent set. Coupled with the exponentially increased cumulative stiffness of the collagen fibers with strain, significant structural reserved implies that loading stresses several orders of magnitudes higher than the physiological loading level is necessary to further deform the collagen fibers. Also, taking into account the rapid recruitment of native collagen fibers (collagen fibers do not extend by more than 5-8\% strain before breaking \cite{buehler_atomistic_2006}), the collagen fiber architecture serves as a barrier in limiting the changes in geometry due to permanent set. This potentially gives us a way of predicting the final stress free BHV geometry after permanent set has largely ceased. This can have significant impact on the design BHVs as we can optimize the BHV geometry based on these results to minimize the leaflet stresses. Since the permanent effect is most significant during the first 40 to 50 million cycles (Fig. \ref{fig:parametric}), which approximates to the first 8-9 month after implant, BHVs will operate in the post permanent set geometry during the majority of its life span (Fig. \ref{fig:hypothesis}, when structural damage the accumulation of structural damage is most significant. Thus predicting the post permanent set geometry can have significant implications on the durability of BHV designs.
+	
+\subsection{Effects on the durability of BHVs}
+    Our findings suggests that this that the permanent set mechanism has great potential in predicting the non-biological driven changes in the BHVs in the first 2-5 years. As such, the permanent set mechanism can greatly aid the use of computational simulations in exploring BHV designs and the impact of permanent set at the valve-level. Specifically, computational models can be used to adjust the initial geometry to tailor for optimal stress distribution in the valve leaflets after permanent set. Thus, the permanent set mechanism can help us explain why stress concentrations develop, which will accelerate structural damage, and help to create designs which can mitigate this effect. High stress regions have been linked to regions with high structural damage which have significant impact on the long-term behavior of BHVs. By quantifying factors such as how the peak stress and stress distribution change due to permanent, we can predict the increased likelihood of structural damage in the leaflet due to permanent set and how it impact BHV durability.
+    
+
+\subsection{Limitations} 
+	Our available cyclic loading data for exogenously crosslinked BP is limited in terms of cycled duration, multitude of strain levels, the rate of cyclic loading and number of specimens. 
+	However, it is important to note that our goal was to develop the constitutive model form for exogenously crosslinked tissue under cyclic loading, not to obtain a population of material parameters for statistical testing and simulations. 
+	The extant experimental data we used for parameter estimation was sufficient for this purpose, which have specimens under both constant strain level and time evolving strain level, and with loading along the preferred collagen fiber direction and more rigorous loading orthogonal to preferred collagen fiber direction.
+	We note that some modification may be necessary, such as extending the model for the rate constant as a function of strain level and rate of cycling. 
+	However, the permanent set mechanism described was able to explain the effects of cyclic loading in the early stage. 
+	The lack of cyclic loading data beyond 65 million cycles, especially up to 100 or 200 million cycles, means that we are not able to incorporate structural damage into our constitutive model at this point. 
+	Although, based on what we observed, structural damage does not appear to play an observable ~65 million cycles. 

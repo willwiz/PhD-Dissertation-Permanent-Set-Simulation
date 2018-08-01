@@ -3,48 +3,65 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Nomenclature} \label{c4:sec:nomenclature}
 \begin{mynom}
-\textbf{Key Terms}  \\
-{EXL}\>\tabfill{Exogenously crosslinked} \\
-{PS}\>\tabfill{Permanent set, an irreversible deformation that remains in a structure or material after it has been subjected to stress.} \\
-{Damage}\>\>\tabfill{Loss of mechanical properties} \\
-{Fatigue}\>\>\tabfill{Weakening of a material caused by repeated loading} \\
-{Plastic deformation}\>\>\>\>\>\tabfill{Deformation of a material undergoing irreversible change in shape in response to applied forces} \\
-{Structural convection}\>\>\>\>\>\>\tabfill{A permanent deformation of the collagen fiber architecture based on the change in the reference configuration} \\
-{BP}\>\tabfill{Bovine pericardium} \\
-{CFA}\>\tabfill{Collagen fiber architecture} \\
-{BHV}\>\tabfill{Bioprosthetic heart valve} \\
-{AWT}\>\tabfill{Accelerated wear testing} \\
-{GLUT}\>\tabfill{Glutaraldehyde} \\
-{TVI}\>\tabfill{Transcatheter aortic intervention } \\
-{PD}\>\tabfill{Preferred direction} \\
-{XD}\>\tabfill{Cross-preferred direction} \\
-{ODF}\>\tabfill{Orientation distribution function} \\
-{Recruitment}\>\>\>\>\tabfill{Probability distribution function describing the strain at which a collagen fiber's crimp is straightened } \\ 
-{Fiber ensemble}\>\>\>\>\tabfill{A group of fibers which share a common orientation} \\
-\textbf{Symbols}    \\
-{$\Psi$}\>\tabfill{Strain energy} \\
-{$D$}\>\tabfill{Collagen fiber recruitment distribution function} \\
-{$\Gamma$}\>\tabfill{Collagen fiber orientation distribution function} \\
-{$\phi$}\>\tabfill{Mass fraction} \\
-{$\eta_C$, $\eta_m$, $\eta_I$}\>\>\>\tabfill{The modulus of collagen, exogenously crosslinked matrix and fiber-fiber interactions} \\
-{$\mathbf{I}$}\>\tabfill{Identity tensor} \\
-{$\mathbf{F}$}\>\tabfill{An arbitrary deformation gradient tensor applied to the tissue, referenced to the original uncycled stress free state} \\
-{$\mathbf{C}$}\>\tabfill{Right Cauchy-Green strain tensor, referenced to the original uncycled stress free state} \\
-{$\mathbf{E}$}\>\tabfill{Green Lagrange strain, referenced to the original uncycled stress free state} \\
-{$\lambda$}\>\tabfill{Stretch} \\
-{$\mathbf{S}$}\>\tabfill{Second Piola Kirchhoff tensor, referenced to the original uncycled stress free state} \\
-{$I_1$}\>\tabfill{First invariant} \\
-{$I_8$}\>\tabfill{Eighth pseudo invariant} \\
-{$k$}\>\tabfill{Rate constant for permanent set} \\
-{$s$}\>\tabfill{The current time in seconds } \\
-{$\hat{s}$}\>\tabfill{The intermediate time when the exogenously crosslinked matrix is formed by the scission-healing process } \\
-{$\Omega_0$}\>\tabfill{The original unloaded configuration of the tissue before any cyclic loading} \\
-{$\Omega(s)$}\>\tabfill{The current loaded configuration of the tissue during cyclic loading} \\
-{$\mathbf{A}(s)$}\>\tabfill{Strain history, which is the root mean square strain of each cycle as a function of time} \\
-{$\mathbf{\tilde{B}}(s) = \mathbf{A}\mathbf{A}^\mathsf{T}$}\>\>\>\tabfill{Left Cauchy Green tensor of the strain history} \\
-{$\mathbf{\bar{F}}(\hat{s})$}\>\tabfill{Deformation gradient tensor applied to the tissue, referenced to the strain history $\mathbf{A}(\hat{s})$ at time $\hat{s}$} \\
-{$\mathbf{\bar{C}}(\hat{s})$}\>\tabfill{The right Cauchy Green strain tensor applied to the tissue, referenced to the strain history $\mathbf{A}(\hat{s})$ at time $\hat{s}$} \\
-{$\bar{I}_1$}\>\tabfill{Modified first invariant, referenced to the strain history $\mathbf{A}(\hat{s})$ at time $\hat{s}$} \\
-{$\Omega_\mathrm{PS}(s)$}\>\tabfill{The current unloaded configuration due to changes in geometry caused by permanent set} \\
-{$\mathbf{F}_\mathrm{PS}(s)$}\>\tabfill{The deformation from $\Omega_0$ to the current unloaded configuration ($\Omega_\mathrm{PS}$) due to permanent set}
+\textbf{Key Terms}   \\
+{Matrix}\>\>\tabfill{Non-fibrous part of the extracellular matrix }  \\
+{EXL}\>\tabfill{Exogenously crosslinked}  \\
+{PS}\>\tabfill{Permanent set, an irreversible deformation that remains in a structure or material after it has been subjected to stress.}  \\
+{Damage}\>\>\tabfill{Loss of mechanical properties}  \\
+{Fatigue}\>\>\tabfill{Weakening of a material caused by repeated loading}  \\
+{Plastic deformation}\>\>\>\>\>\tabfill{Deformation of a material undergoing irreversible change in shape in response to applied forces}  \\
+{Structural convection}\>\>\>\>\>\>\tabfill{A permanent deformation of the collagen fiber architecture based on the change in the reference configuration}  \\
+{BP}\>\tabfill{Bovine pericardium}  \\
+{CFA}\>\tabfill{Collagen fiber architecture}  \\
+{BHV}\>\tabfill{Bioprosthetic heart valve}  \\
+{AWT}\>\tabfill{Accelerated wear testing}  \\
+{GLUT}\>\tabfill{Glutaraldehyde}  \\
+{TVI}\>\tabfill{Transcatheter aortic intervention }  \\
+{PD}\>\tabfill{Preferred direction}  \\
+{XD}\>\tabfill{Cross-preferred direction}  \\
+{ODF}\>\tabfill{Orientation distribution function}  \\
+{Recruitment}\>\>\>\tabfill{Probability distribution function describing the strain at which a collagen fiber's crimp is straightened }  \\ 
+{Fiber ensemble}\>\>\>\>\tabfill{A group of fibers which share a common orientation}  \\
+\textbf{Symbols}      \\
+{$\Psi$}\>\tabfill{Strain energy}  \\
+{$\Psi_\mathrm{col}, \Psi_\mathrm{int}, \Psi_m$}\>\>\>\tabfill{Strain energy of the collagen fiber, ensemble-ensemble interactons, and matrix components respectively}  \\
+{$D$}\>\tabfill{Collagen fiber recruitment distribution function}  \\
+{$\lambda_s$}\>\tabfill{The slack stretch, the stretch needed to straighten the collagen fiber crimp }  \\
+{$\Gamma$}\>\tabfill{Collagen fiber orientation distribution function}  \\
+{$\phi$}\>\tabfill{Mass fraction}  \\
+{$\eta_C$, $\eta_m$, $\eta_I$}\>\>\>\tabfill{The modulus of collagen, EXL matrix and fiber-fiber interactions}  \\
+{$\mathbf{I}$}\>\tabfill{Identity tensor}  \\
+{$\mathbf{F}$}\>\tabfill{An arbitrary deformation gradient tensor applied to the tissue, referenced to the original uncycled stress free state}  \\
+{$\mathbf{C}$}\>\tabfill{Right Cauchy-Green strain tensor, referenced to the original uncycled stress free state}  \\
+{$\mathbf{E}$}\>\tabfill{Green Lagrange strain, referenced to the original uncycled stress free state}  \\
+{$\lambda$}\>\tabfill{Stretch}  \\
+{$\mathbf{n}_\alpha$}\>\tabfill{A vector pointing at the angle $\alpha$ }  \\
+{$\lambda_\alpha = \sqrt{\mathbf{n}_\alpha \cdot \mathbf{C} \mathbf{n}_\alpha}$}\>\>\>\>\tabfill{The applied stretch at the fiber ensemble-level in the direction $\alpha$ }  \\
+{$\prescript{}{\alpha}{\lambda}_s$}\>\tabfill{The slack stretch of a collagen fiber oriented with the angle $\alpha$ }  \\
+{$\mathbf{S}$}\>\tabfill{Second Piola Kirchhoff tensor, referenced to the original uncycled stress free state}  \\
+{$I_1$}\>\tabfill{First invariant}  \\
+{$I_8$}\>\tabfill{Eighth pseudo invariant}  \\
+{$I_8^rot$}\>\tabfill{The rotational component of $I_8$ }  \\
+{$I_8^ext$}\>\tabfill{The extensional component of $I_8$ }  \\
+{$k$}\>\tabfill{Rate constant for permanent set}  \\
+{$s$}\>\tabfill{The current time in seconds }  \\
+{$\hat{s}$}\>\tabfill{The intermediate time when the EXL matrix is formed by the scission-healing process }  \\
+{$\Omega_0$}\>\tabfill{The original unloaded configuration of the tissue before any cyclic loading}  \\
+{$\Omega(s)$}\>\tabfill{The current loaded configuration of the tissue during cyclic loading}  \\
+{$\mathbf{A}(s)$}\>\tabfill{Strain history, which is the root mean square strain of each cycle as a function of time}  \\
+{$\mathbf{\tilde{B}}(s) = \mathbf{A}\mathbf{A}^\mathsf{T}$}\>\>\>\tabfill{Left Cauchy Green tensor of the strain history}  \\
+{$\mathbf{\bar{F}}(\hat{s})$}\>\tabfill{Deformation gradient tensor applied to the tissue, referenced to the strain history $\mathbf{A}(\hat{s})$ at time $\hat{s}$}  \\
+{$\mathbf{\bar{C}}(\hat{s})$}\>\tabfill{The right Cauchy Green strain tensor applied to the tissue, referenced to the strain history $\mathbf{A}(\hat{s})$ at time $\hat{s}$}  \\
+{$\bar{I}_1$}\>\tabfill{Modified first invariant, referenced to the strain history $\mathbf{A}(\hat{s})$ at time $\hat{s}$}  \\
+{$\bar{\mathbf{\Psi}}_m$}\>\tabfill{Strain energy of the matrix as function of $\bar{I}_1$}  \\
+{$\bar{\mathbf{S}}_m$}\>\tabfill{Stress of the matrix as function of $\bar{I}_1$}  \\
+{$\Omega_\mathrm{PS}(s)$}\>\tabfill{The current unloaded configuration due to changes in geometry caused by permanent set}  \\
+{$\mathbf{F}_\mathrm{PS}(s)$}\>\tabfill{The deformation from $\Omega_0$ to the current unloaded configuration ($\Omega_\mathrm{PS}$) due to permanent set}  \\
+{$b(s)$}\>\tabfill{The proportion of the existing amount of material remaining}  \\
+{$a(s,\hat{s})$}\>\tabfill{The proportion of the material newly formed at time $\hat{s}$ remaining}  \\
+{$\prescript{1}{0}{\mathbf{F}}$}\>\tabfill{The deformation gradient from $\Omega_0$ to some arbitrary state $\Omega_1$, most commonly $\Omega_1 = \Omega_\mathrm{PS}$ }  \\
+{$\prescript{1}{0}{\lambda}(\theta_0)$}\>\tabfill{The stretch of an ensemble oriented along $\theta_0$ in $\Omega_0$ deformed from $\Omega_0$ to some arbitrary state $\Omega_1$}  \\
+{$D_1$}\>\tabfill{The collagen fiber recruitment distribution function convected from $\Omega_0$ to to some arbitrary state $\Omega_1$ }  \\
+{$\Gamma_1$}\>\tabfill{The collagen fiber orientation distribution function convected from $\Omega_0$ to to some arbitrary state $\Omega_1$}  \\
+{$\mathbf{\hat{S}}$}\>\tabfill{The applied stress during cyclic loading }  \\
 \end{mynom}
