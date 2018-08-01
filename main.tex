@@ -30,8 +30,13 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 
-\usepackage[acronyms,toc,nonumberlist,nogroupskip]{glossaries}
+\usepackage{etoolbox}
+\apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
+\apptocmd{\thebibliography}{\raggedright}{}{}
 
+
+\usepackage[table]{xcolor}
+\definecolor{Gray}{gray}{0.9}
 
 % Used to create the nomenclatures					%
 \makeatletter
@@ -188,7 +193,7 @@ Soft-tissue-derived exogenously cross-linked (EXL) biomaterials continue to the 
 
 %\bibliographystyle{plain}  % Here the bibliography 		     %
 % \bibliography{diss}        % is inserted.			     %
-\index{Bibliography@\emph{Bibliography}}%			     %
+%\index{Bibliography@\emph{Bibliography}}%			     %
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -200,7 +205,7 @@ Soft-tissue-derived exogenously cross-linked (EXL) biomaterials continue to the 
 %	to generate the index (if used) MUST be moved to before      %
 %	the bibliography section.				     %
 %								     %
-\printindex%    % Include the index here. Comment out this line      %
+%\printindex%    % Include the index here. Comment out this line      %
 %		% with a percent sign if you do not want an index.   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
