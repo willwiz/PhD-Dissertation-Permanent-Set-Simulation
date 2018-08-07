@@ -1,7 +1,9 @@
 \section{Motivation, innovation, and specific aims}
 
-\subsection{Motivation and innovation}
+\subsection{Motivation}
+    The basis of this proposal is fulfilling the lack of knowledge on the underlying mechanism driving the fatigue and failure of BHV devices, which is the major hurdle impede the development on new BHV technologies. Traditionally, the development of BHV starts with simple mechanical characterization for their ability to handle their mechanical demands, and accelerated wear testing (AWT) at 10-15 time normal physiological rate to evaluate durability. Successful designs are then put through animal models and clinical testing. The first stage offers only simple understanding of the functional properties and durability of these devices while the latter is a complex and unpredictable system and the ultimate cause of failure is difficult to be understood. Thus the crux of this proposal is the lack of a more rigorous approach that better utilities in vitro experimental measurements and fundamental understanding of structure-functional relationship to predict the performance of BHVs.
 
+\subsection{Innovations}
 \subsubsection{The Lack of Established Constitutive Models for Planar Soft Tissues}
     Although finite element analysis is an effective method for stress analysis, truly predictable computational simulations cannot be done without an accurate constitutative model for the underlying biomechanical response. There is currently a lack of a well establish constitutive model for collagenous soft tissues. Currently each research group uses their own model, often simple forms of the Fung model or linear functions of the invariants. These models are often not informative, offering no insights into the structural functional relationship. Unfortunately, this also means these models are also lack predictive capabilities as a result, and can only interpolated the experimental data. This is a problem for simulating the effect of fatigue in which the geometry and the mechanical properties of BHVs can change significantly, necessating extrapolation of the data into unmeasured regime. Structural models theories exists [27-29] but is under utilized and not well validated for the wide range of tissue that may be applicable for BHV devices. Thus, the establishment of a generalized and well-validated constitutive model is a critical step the in process of developing accurate simulations of BHV devices.
 
@@ -27,6 +29,16 @@
     \addcontentsline{toc}{subsubsection}{Specific Aim 2: Extend the meso-scale structural constitutive model to account for of the presence of EXLs and subsequent response to continuous cyclic loading.}%
     
     
-    \subsubsection*{Specific Aim 3: Application to organ/device level.} In this final aim, we will develop a full 3D finite element implementation utilizing the open source FEniCS framework for greater modularity and extensibility. The model will utilize real BHV geometries and fiber microstructure mapped from experimental measurements, and will be validated by simulating of the PS experiments from SA 2. We will further perform organ-level study of PS and collagen fiber-level damage using accelerated wear testing of specialized ovine mitral transcutaneous BHVs. We will use an inverse modeling approach with micro-CT measurements [2] to quantify changes in mechanical behaviors. The validated model and rate constants will then be used to parametrically examine the changes in BHV geometry and stress distribution overtime, where change in resting and loaded geometry of the valve as well as the development of stress concentrations are the early indicators of BHV failure. We will also explore initial geometries and material properties which may minimize the risks of these effects. With this, we aim to develop a better understanding of the underlying process that occurs during long-term cyclic loading using our constitutive modeling approach and device level applications, and translate the insights gained to improving BHV design and durability. 
+    \subsubsection*{Specific Aim 3: Application to organ/device level.} In this final aim, we will develop a full 3D finite element framework for the simulation of permanent set utilizing an effective model approach, acting as an intermediate between the predictive constitutive model and the numerical implementation. This approach has great potential to improve the computational efficiency of numerical simulations using multi-scale or structural modeling approaches. We will parametrically explore initial geometries and material properties which may minimize the risks of these effects. With this, we aim to develop a better understanding of the underlying process that occurs during long-term cyclic loading using our constitutive modeling approach and device level applications, and translate the insights gained to improving BHV design and durability. 
 
     \addcontentsline{toc}{subsubsection}{Specific Aim 3: Application to organ/device level}%
+    
+    
+%-------------------	begin FIGURE 	-------------------%
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{Images/chapter1/specificaims.pdf}
+\caption{Overview of the entire project, showing how we will develop a FDM model for a BHV starting from with a generalized model of its mechanical response (SA 1) and extended for cross-linking effects including the stiffening of the matrix, increasing of collagen fiber-fiber interactions and PS (SA 2) and finally applied at the organ-level using a finite element framework (SA 3).}
+\label{c1:fig:specificaims}
+\end{figure}
+%-------------------	 end FIGURE 	-------------------%
