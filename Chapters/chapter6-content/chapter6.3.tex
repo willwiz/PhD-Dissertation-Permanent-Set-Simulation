@@ -28,17 +28,6 @@
 \subsection{Permanent set simulation of bioprosthetic heart valve}
     This initial was done with 1) homogenous material parameters simular to bovine pericardium from Sacks and Zhang \cite{sacks_novel_2016}, 2) the Edward valve geometry from \cite{aggarwal_inverse_2015}, and collagen fiber distributions aligned with the circumference direction and a standard deviation of $30^\circ$. The key result is that permanent set slow done after around 20 million cycles and nearly completely seizes after 30 million cycles (Fig. \ref{c6:fig:psdeformation} \&\ref{c6:fig:psnoi}). This effect is closely linked the microstructural of the collagen fiber network. The gradual slow down is correlated with the straightening and recruitment of collagen fibers. This was predicted from the constitutive model (Eqn. \ref{c6:eq:fullEXLmodel}) (Fig. \ref{fig:parametric}). This is an important structural response, which allows us to predict the final reference geometry of the BHV. Since 30 million cycles corresponds to only 1 year after being surgically implanted, the BHV will remain in this configuration for the rest of its 9-14 year life span. By optimizing the initial BHV design so that the peak stress is minimal in the configuration after permanent set has seized, we can potentially improve the durability of BHVs by minimizing the load on the collagen fibers. Because collagen fibers have high rates of failure after being extended by 7-8\% \cite{lanir_structural_1979}\cite{buehler_atomistic_2006}, more evenly distributing the stresses can reduce this mode of failure. 
     
-    
-    Here we also note that the regions that undergo most permanent set are: the belly region, center of the free edge, and the regions near the commissures, where the leaflets initial makes contact (Fig. \ref{c6:fig:psdeformation}). These regions are also the most common regions of failure in BHVs. Due to the change in reference configuration, the collagen fibers in these regions recruit more quickly and may even held in a constant extended state. This can have dramatic consequences on the likelihood of failure of these collagen fibers due to their low extensibility, and could be a major mechanism for the fiber level damage in BHVs. 
-    
-    
-    We have also shown that we can predict the change in the collagen fiber architecture (Fig. \ref{c6:fig:psnoi}). Here we plotted the normalized orientation index (NOI)
-    \begin{equation}
-        NOI = \frac{\sigma_iso - \sigma(s)}{\sigma_iso},
-    \end{equation}
-    which is based on how spread apart (standard deviation $\sigma$) is collagen fiber orientation is. Here, $NOI = 1$ indicate fully aligned distributions (delta distributions), which $NOI = 0$ indication that the fiber distribution is an uniform distribution. We can see that the belly region and the free edge undergoes the greatest degree of realignment. This is most likely due to the fact that these two regions receives the least amount of support from the neighboring leaflets. The most important aspect of being able to predict the structural changes is that we can use it to compute the degree of recruitment of collagen fibers in a similar method to chapter \ref{c2:sec:233}. This allows us to compute the distribution of collagen fiber by their stretches after being straightened. This mechanism can be used to potentially develop a strain-level dependent model for the likelihood of collagen fiber damage in a future extension. 
-
-    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %-------------------	begin FIGURE 	-------------------%
 \begin{figure}
@@ -60,3 +49,14 @@
 \end{figure}
 %-------------------	 end FIGURE 	-------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    Here we also note that the regions that undergo most permanent set are: the belly region, center of the free edge, and the regions near the commissures, where the leaflets initial makes contact (Fig. \ref{c6:fig:psdeformation}). These regions are also the most common regions of failure in BHVs. Due to the change in reference configuration, the collagen fibers in these regions recruit more quickly and may even held in a constant extended state. This can have dramatic consequences on the likelihood of failure of these collagen fibers due to their low extensibility, and could be a major mechanism for the fiber level damage in BHVs. 
+    
+    
+    We have also shown that we can predict the change in the collagen fiber architecture (Fig. \ref{c6:fig:psnoi}). Here we plotted the normalized orientation index (NOI)
+    \begin{equation}
+        NOI = \frac{\sigma_iso - \sigma(s)}{\sigma_iso},
+    \end{equation}
+    which is based on how spread apart (standard deviation $\sigma$) is collagen fiber orientation is. Here, $NOI = 1$ indicate fully aligned distributions (delta distributions), which $NOI = 0$ indication that the fiber distribution is an uniform distribution. We can see that the belly region and the free edge undergoes the greatest degree of realignment. This is most likely due to the fact that these two regions receives the least amount of support from the neighboring leaflets. The most important aspect of being able to predict the structural changes is that we can use it to compute the degree of recruitment of collagen fibers in a similar method to chapter \ref{c2:sec:233}. This allows us to compute the distribution of collagen fiber by their stretches after being straightened. This mechanism can be used to potentially develop a strain-level dependent model for the likelihood of collagen fiber damage in a future extension. 
+
+    
