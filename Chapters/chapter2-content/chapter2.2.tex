@@ -4,13 +4,13 @@
 
 \subsubsection{Collagen fibrils and fibers} \label{sec:collagenconsiderations}
 
-    In the present work, we assumed that the collagen fibrils were contiguous subunits of the collagen fibers, so that there was negligible slippage between fibrils. To characterize the straightening behavior of the fiber-level crimped structure \cite{lanir_constitutive_1983, fata_insights_2014, sacks_incorporation_2003, lanir_structural_1979, kastelic_structural_1980, hansen_recruitment_2002, cacho_constitutive_2007, grytz_constitutive_2009}, we use only the fiber axial stretch needed to fully straighten the fiber, slack stretch, rather than the period and amplitude of the collagen fibers. This avoids the necessity of incorporating detailed unloaded geometry for the collagen fibers.
+    In the present work, we assumed that the collagen fibrils were contiguous subunits of the collagen fibers so that there was negligible slippage between fibrils. To characterize the straightening behavior of the fiber-level crimped structure \cite{lanir_constitutive_1983, fata_insights_2014, sacks_incorporation_2003, lanir_structural_1979, kastelic_structural_1980, hansen_recruitment_2002, cacho_constitutive_2007, grytz_constitutive_2009}, we use only the fiber axial stretch needed to fully straighten the fiber, slack stretch, rather than the period and amplitude of the collagen fibers. This avoids the necessity of incorporating detailed unloaded geometry for the collagen fibers.
 
 
-    In most structural models, the distribution of collagen slack strains (the recruitment distribution) is assumed to be independent of the orientation. This approach has the advantage of allowing collagen fiber recruitment model parameters to be determined directly from a single planar equibiaxial strain (EB) tests, where the deformation gradient tensor is $F = \operatorname{diag}[\lambda, \lambda, 1/\lambda^2$] and no fiber rotations occur (e.g. \cite{fata_insights_2014}). For bovine pericardium, we have shown that when the collagen fiber orientation distribution function (ODF) is obtained independently, the complete in-plane response can be predicted \cite{sacks_incorporation_2003}. However, some angular dependence may be physiologically relevant for general tissues. For example, collagen fibers are constantly produced and degraded under physiological stresses, and generally prefer to function within homeostatic stress levels \cite{humphrey_cardiovascular_2002}. Moreover, MV leaflets experience large and highly anisotropic deformations in vivo, which would induce substantially higher fiber ensemble stresses in the larger strain direction \cite{amini_vivo_2012,sacks_vivo_2006}. We thus speculate that collagen fibers may exhibit larger undulations in the directions of larger physiological strain to maintain a constant fiber ensemble stress. However, the exact dependence of collagen recruitment on fiber orientation remains unknown and has yet to be explored in the literature.
+    In most structural models, the distribution of collagen slack strains (the recruitment distribution) is assumed to be independent of the orientation. This approach has the advantage of allowing collagen fiber recruitment model parameters to be determined directly from a single planar equibiaxial strain (EB) tests, where the deformation gradient tensor is $F = \operatorname{diag}[\lambda, \lambda, 1/\lambda^2$] and no fiber rotations occur (e.g. \cite{fata_insights_2014}). For bovine pericardium, we have shown that when the collagen fiber orientation distribution function (ODF) is obtained independently, the complete in-plane response can be predicted \cite{sacks_incorporation_2003}. However, some angular dependence may be physiologically relevant for general tissues. For example, collagen fibers are constantly produced and degraded under physiological stresses and prefer to function within homeostatic stress levels \cite{humphrey_cardiovascular_2002}. Moreover, MV leaflets experience large and highly anisotropic deformations in vivo, which would induce substantially higher fiber ensemble stresses in the larger strain direction \cite{amini_vivo_2012,sacks_vivo_2006}. We thus speculate that collagen fibers may exhibit larger undulations in the directions of larger physiological strain to maintain a constant fiber ensemble stress. However, the exact dependence of collagen recruitment on fiber orientation remains unknown and has yet to be explored in the literature.
 
     
-    For the collagen fiber material model, a stress–strain relation that is linear in 2nd Piola Kirchhoff stress and Green Lagrange strain is the predominant fiber model of choice \cite{sacks_incorporation_2003,lanir_structural_1979,fan_simulation_2014}. However, SAXS studies of intact tissue shows that the fibril strain varies linearly with applied forces in tendon \cite{sasaki_elongation_1996,sasaki_stress_1996} and MV leaflet tissues \cite{liao_relation_2007}. Furthermore, the results are corroborated by the atomistic modeling results by Buehler \cite{buehler_atomistic_2006}, where the force displacement relation is essentially linear at strains lower than 0.35.
+    For the collagen fiber material model, a stress-strain relation that is linear in 2nd Piola Kirchhoff stress and Green Lagrange strain is the predominant fiber model of choice \cite{sacks_incorporation_2003,lanir_structural_1979,fan_simulation_2014}. However, SAXS studies of intact tissue shows that the fibril strain varies linearly with applied forces in tendon \cite{sasaki_elongation_1996,sasaki_stress_1996} and MV leaflet tissues \cite{liao_relation_2007}. Furthermore, the results are corroborated by the atomistic modeling results by Buehler \cite{buehler_atomistic_2006}, where the force-displacement relation is essentially linear at strains lower than 0.35.
     
 
 
@@ -47,23 +47,23 @@
 
 \subsubsection{Single fiber models}
 
-    Based on the above considerations (Section \ref{sec:collagenconsiderations}), the following linear force displacement relation for the collagen fibrils and fibers was used
-        %-------------------	begin EQUATION 	-------------------%
+    Based on the above considerations (Section \ref{sec:collagenconsiderations}), the following linear force-displacement relation for the collagen fibrils and fibers was used
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:collagenfiberlaw}
         \begin{aligned}
         P_f =& \eta_{C}\left(\lambda_t - 1\right)\frac{1}{\lambda_s} = \frac{\eta_C}{\lambda_s}\left(\frac{\lambda_f}{\lambda_s} - 1\right)    \\
         S_f =& \frac{1}{\sqrt{2E_s + 1}}\left( \frac{1}{\sqrt{2 E_s + 1}} - \frac{1}{\sqrt{\sqrt{2E_f + 1}}}\right)
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     where $P_f$ and $S_f$ are the 1st and 2nd Piola Kirchhoff fibers stresses, $\eta_C$ is the collagen fiber modulus, $\lambda_f$ and $E_f$ are the fiber stretch and Green’s strain, $\lambda_t$ and $E_t$ are the true fiber stretches and Green’s strains, and $\lambda_s$ and $E_s$ are the slack fiber stretches and Green’s strains. For the elastin fibers, based on Section \ref{sec:elastinconsiderations} and our previous work on the pulmonary artery \cite{fata_insights_2014}, we use the following generalized form,
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:elastinfiberlaw}
         \begin{aligned}
         S^e_f = \eta_e \left( E^e_f\right)^d
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     Here $\eta_e$ is the elastin fiber modulus and $d$ is the exponent that determines the degree of non-linearity of the fiber. This allows us to alter the stress strain relationship of the fiber based on the mechanical and structural data acquired.
 
 
@@ -72,16 +72,16 @@
 \subsubsection{Fiber ensemble models}
 
     As in previous works \cite{lanir_constitutive_1983,sacks_incorporation_2003,fan_simulation_2014}, we scale up to the tissue-level by first considering an ensemble of collagen fibers, which is defined as a sub-group of fibers that share a common initial orientation $n_0$. Collagen fiber recruitment is commonly assumed to be independent of $n_0$, i.e. is orientation-invariant \cite{fata_insights_2014,sacks_incorporation_2003,lanir_structural_1979,fan_simulation_2014}. To evaluate the hypothesis that there may be angular variations is due to homeostasis (Section \ref{sec:collagenconsiderations}), we developed the following generalized framework for orientation-variant fiber recruitment. The fiber recruitment distribution function $D\left[E_s(n_0)\right]$ is a function of the fiber slack strain $E_s$ and orientation $n_0$, and is represented by a beta distribution function. $D\left[E_s(n_0)\right]$ was parametrized by a mean $\mu_r$, a standard deviation $\sigma_r$, and was defined over a strain range bounded by the lower- and upper-bounds $E_{lb}$ and $E_{ub}$. The general form given by,
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:recruitmentdistribution}
         \begin{aligned}
         D(\mathbf{\xi},E_s) = \frac{(y)^{\alpha-1}(1-y)^{\beta-1}}{B(\alpha,\beta)(E_{ub}-E_{lb})}, 
             \quad y = \frac{E_s - E_{lb}}{E_{ub} - E_{lb}}, \quad y \in (0,1)
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     where the parameter vector is $\mathbf{\xi} = \{\mu, \sigma, E_{lb}, E_{ub} \}$. Here, $B(\alpha, \beta)$ is the Beta distribution function with shape parameters $\alpha$, $\beta$. The interrelationships between the two are
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:recruitmentparameters}
         \begin{gathered}
         \hat{\mu}_r = (\mu_r - E_{lb})/(E_{ub} - E_{lb}), \quad \hat{\sigma}_r = \sigma_r/(E_{ub} - E_{lb}),  \\
@@ -89,28 +89,28 @@
         \mu_r \in (E_{lb}, E_{ub}), \quad \Hat{\mu}_r \in (0,1)
         \end{gathered}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     It should be noted that the parameters in Eqns \ref{eqn:recruitmentdistribution}, \ref{eqn:recruitmentparameters} are functions of the initial fiber ensemble orientation $n_0$, so that $\xi (n0)$.
 
 
     While comprehensive, equations \ref{eqn:recruitmentdistribution}, \ref{eqn:recruitmentparameters} present difficulties in actual implementation by either direct experimental measurement or parameter estimation \cite{hill_theoretical_2012}. However, the equations can be reduced using the assumption that the ensemble stresses are constant with orientation. Here the ensemble strain Es is scaled by the maximum ensemble strain $E_{max}(\mathbf{n}_0)$ in the fully loaded state.
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:recruitmentasafunctionofangle}
         \begin{aligned}
         D(\mathbf{\xi},E_s) = \bar{D}\left(\bar{\mathbf{\xi}}, \frac{E_s}{E_max(\mathbf{n}_0)}\right)
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     where the parameter vector is now $\bar{\mathbf{\xi}} = \bar{\mathbf{\xi}}(\mathbf{n}_0) = (\bar{\mu}, \bar{\sigma}, \bar{E}_{lb}, \bar{E}_{ub})$, which is non-dimensionalized as indicated by the overbar. Using this form, the same fraction of fibers is recruited for each fiber ensemble at the maximum strain and the ensemble stresses becomes approximately constant with orientation. This form also requires no additional parameters. In addition to the above analysis, we utilized the standard orientation-invariant approach \cite{fata_insights_2014} defined as
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:recruitmentasafunctionnormal}
         \begin{aligned}
         D(\mathbf{\xi},E_s) = D(\{\mu_r, \sigma_r, E_{lb}, E_{ub}\}, E_s(\mathbf{n}_0))
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     For both forms, the resulting ensemble stress is given by
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:collagenensemblestress}
         \begin{aligned}
         &S_e^{ens}\left[ \mathbf{\xi}, E_{ens}(\mathbf{n}_0)\right] = 
@@ -123,7 +123,7 @@
             \end{cases}
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     Finally, since elastin fibers are straight (i.e. not undulated like collagen fibers), the elastin ensemble stress is simply $S_e^{ens} = \eta_e(E_{ens})^d$.
     
 
@@ -132,19 +132,19 @@
 \subsubsection{Complete layer and full tissue forms}
 
     The strain energy of collagen and elastin fibers for each layer is given by the sum of the fiber ensembles weighted by the fiber ODF $\Gamma(\theta)$ and mass fraction with respect to each layer $\phi$. $\Gamma(\theta)$ is approximated using another beta distribution function with a mean $\mu$ and standard deviation $\sigma$ \cite{fata_insights_2014}. Since $\Gamma(\theta)$ is nearly symmetric, the shape parameters $\alpha$ and $\beta$ are forced to be equal (Eqn. \ref{eqn:recruitmentparameters}), thus $\bar{\mu} = 0.5$ at all points. A remainder function is then used to ensure $\theta \in \left[\mu - \pi/2, \mu + \pi/2 \right]$, before normalizing it to the domain of the beta function $y \in \left[0,1\right]$, yielding
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:orientatinodistributionfunction}
         \begin{aligned}
         \Gamma(\theta) = \frac{B(\alpha,\alpha,y)}{\pi}, \quad y = \frac{\operatorname{Mod}(\theta - (\mu -     \pi/2), \pi)}{\pi}, \\
         \alpha = -0.5 \left(\bar{\sigma}^2 + 0.25 -0.5\right)/\bar{\sigma}^2, \quad \bar{\sigma} = \sigma/\sigma\pi
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     where $B$ is the Beta function.
     
     
     Next, we define the tissue “matrix” as PG, GAGs, and water into a homogenized single phase and represented using an incompressible Neo–Hookean model. The resulting matrix stress tensor, assuming a planar configuration and no distinctions between layers, is $S_m = \mu_m(\mathbf{I} - C_{33}\mathbf{C}^{-1})$. This phase is necessary to enforce incompressibility and to obtain accurate results in computational simulations \cite{fan_simulation_2014}. The resulting total tissue stress, weighted by the mass fractions $\phi$, is given by
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{eqn:multilayeredstressform}
         \begin{aligned}
         \mathbf{S} =& \sum_{L = 1}^\mathrm{n layers} \left\{
@@ -156,7 +156,7 @@
         &+ \phi_m\eta_m\left(\mathbf{I} - C_{33}\mathbf{C}^{-1}\right)
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     where the superscript L indicates the layer and the parameter list for Eqn. \ref{eqn:multilayeredstressform} is given in Table \ref{c2tab:modelparameters}.
 
 
@@ -219,7 +219,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Structural characterization} \label{c2sec:structure}
 
-    To obtain the mass fractions of the major ECM components for each layer, additional porcine MV leaflets (n = 3) were harvested from a local slaughter house and immediately transported for sectioning. Transverse sections from the central region of each leaflet were stained using Movat’s Pentachrome stain (Fig. \ref{c2:fig:2}), and then imaged using light microscopy to determine the relative thickness of each layer. Color deconvolution was then used to separate the collagen (yellow), elastin (Black), and PGs (Blue). The relative area fraction in each layer was determined using the total color intensity (Table \ref{c2tab:massfractions}). ODFs for both collagen and elastin fiber networks were quantified by SHG imaging using methods described by Carruthers et al. \cite{carruthers_alterations_2012} (Fig. \ref{c2:fig:2}). The resulting orientation distribution functions (ODF) for collagen and elastin were obtained using the methods of Courtney et al. \cite{courtney_design_2006}.
+    To obtain the mass fractions of the major ECM components for each layer, additional porcine MV leaflets (n = 3) were harvested from a local slaughterhouse and immediately transported for sectioning. Transverse sections from the central region of each leaflet were stained using Movat’s Pentachrome stain (Fig. \ref{c2:fig:2}) and then imaged using light microscopy to determine the relative thickness of each layer. Color deconvolution was then used to separate the collagen (yellow), elastin (Black), and PGs (Blue). The relative area fraction in each layer was determined using the total color intensity (Table \ref{c2tab:massfractions}). ODFs for both collagen and elastin fiber networks were quantified by SHG imaging using methods described by Carruthers et al. \cite{carruthers_alterations_2012} (Fig. \ref{c2:fig:2}). The resulting orientation distribution functions (ODF) for collagen and elastin were obtained using the methods of Courtney et al. \cite{courtney_design_2006}.
     
     
 
@@ -262,15 +262,15 @@
 
 \subsubsection{Uniaxial loading}
 
-    Under uniaxial loading along the circumferential direction, only the highly circumferentially aligned collagen in the fibrosa and ventricularis layers, which constitute the bulk of the MV, are loaded. This aided the preliminary examination of the collagen fibers mechanics, as the contribution of elastin becomes negligible at high stress. To perform these tests, specimens from four anterior MV leaflets were tested under uniaxial strain until failure. Each specimen was cut into 5 by 20 mm stripes with the long axis oriented along the preferred direction (circumferential) of the leaflet. The specimens were clamped at both ends of the long axis with a separation of 13.5 mm to serve as the gauge length. The transverse direction was unconfined and allowed to contract laterally. One end of the clamps was then displaced at a rate of 0.1 mm/s. The tests were manually aborted after the tissue tears. No preconditioning was done and the tissue was not preloaded. To measure the internal strains more accurately, an optical marker tracking method was used \cite{billiar_biaxial_2000}. All testing was done at room temperature in phosphate buffered saline (PBS).
+    Under uniaxial loading along the circumferential direction, only the highly circumferentially aligned collagen in the fibrosa and ventricularis layers, which constitute the bulk of the MV, is loaded. This aided the preliminary examination of the collagen fibers mechanics, as the contribution of elastin becomes negligible at high stress. To perform these tests, specimens from four anterior MV leaflets were tested under uniaxial strain until failure. Each specimen was cut into 5 by 20 mm stripes with the long axis oriented along the preferred direction (circumferential) of the leaflet. The specimens were clamped at both ends of the long axis with a separation of 13.5 mm to serve as the gauge length. The transverse direction was unconfined and allowed to contract laterally. One end of the clamps was then displaced at a rate of 0.1 mm/s. The tests were manually aborted after the tissue tears. No preconditioning was done and the tissue was not preloaded. To measure the internal strains more accurately, an optical marker tracking method was used \cite{billiar_biaxial_2000}. All testing was done at room temperature in phosphate buffered saline (PBS).
 
 
 \subsubsection{Equibiaxial planar strain tests}
 
-    EB planar strain kinematics has several important advantages for examining the effective stress–strain relations in MV leaflet tissues. Firstly, like uniaxial testing, the test can be carried out into the MPa range, exceeding physiological stress levels to insure all collagen fibers are fully recruited. Secondly, as there are no fiber rotations, one can obtain the fiber ensemble response under the assumption of orientation-invariant fiber recruitment \cite{fata_insights_2014,sacks_incorporation_2003,fan_simulation_2014}. This allows direct estimation of the orientation-invariant fiber recruitment function and effective fiber modulus.
+    EB planar strain kinematics has several important advantages for examining the effective stress-strain relations in MV leaflet tissues. Firstly, like uniaxial testing, the test can be carried out into the MPa range, exceeding physiological stress levels to ensure all collagen fibers are fully recruited. Secondly, as there are no fiber rotations, one can obtain the fiber ensemble response under the assumption of orientation-invariant fiber recruitment \cite{fata_insights_2014,sacks_incorporation_2003,fan_simulation_2014}. This allows direct estimation of the orientation-invariant fiber recruitment function and effective fiber modulus.
     
     
-    To obtain the requisite EB strain data, porcine MV specimens were harvested from a local slaughter house and immediately transported for testing. 10 mm by 10 mm sections were taken from the center region of each leaflet and mounted to a custom-built biaxial device \cite{grashow_biaxial_2006,grashow_planar_2006} with the circumferential and radial directions aligned to the device axes. The specimens were immersed in PBS and tested at room temperature. The strain was determined via four fiducial markers glued to the central region of the specimen \cite{billiar_biaxial_2000}. The free-floating state was used as the stress-free reference state, while a preload of 1 g was applied for testing purposes. Starting at 10\% strain, each specimens was tested for ten 30 s cycles with the tenth cycle taken as representative. The maximum strain was then systematically increased until a linear stress–strain region was observed. A total of 7 anterior and 7 posterior porcine MV leaflets were tested.
+    To obtain the requisite EB strain data, porcine MV specimens were harvested from a local slaughterhouse and immediately transported for testing. 10 mm by 10 mm sections were taken from the center region of each leaflet and mounted to a custom-built biaxial device \cite{grashow_biaxial_2006,grashow_planar_2006} with the circumferential and radial directions aligned to the device axes. The specimens were immersed in PBS and tested at room temperature. The strain was determined via four fiducial markers glued to the central region of the specimen \cite{billiar_biaxial_2000}. The free-floating state was used as the stress-free reference state, while a preload of 1 g was applied for testing purposes. Starting at 10\% strain, each specimen was tested for ten 30 s cycles with the tenth cycle taken as representative. The maximum strain was then systematically increased until a linear stress-strain region was observed. A total of 7 anterior and 7 posterior porcine MV leaflets were tested.
 
 
 \subsubsection{Full in-plane responses}
@@ -297,60 +297,60 @@
     
 \subsubsection{Modifications for collagen fiber recruitment bounds}
 
-    As observed in both uniaxial and EB strain data (Fig. \ref{c2:fig:3}), a gradual increase in collagen fiber recruitment and a transition to a linear stress–strain response were clearly visible. In preliminary studies of the collagen fiber recruitment probability function $D(E_s)$, we observed that when the lower-bound $E_{lb}$ was sufficiently distant from the mean $\mu_r$, the overall shape of $D(E_s)$ did not change significantly with further decreases in $E_{lb}$. Thus, to reduce the number of parameters, the lower-bound of the distribution was set to $E_{lb} = 0$.
+    As observed in both uniaxial and EB strain data (Fig. \ref{c2:fig:3}), a gradual increase in collagen fiber recruitment and a transition to a linear stress-strain response were clearly visible. In preliminary studies of the collagen fiber recruitment probability function $D(E_s)$, we observed that when the lower-bound $E_{lb}$ was sufficiently distant from the mean $\mu_r$, the overall shape of $D(E_s)$ did not change significantly with further decreases in $E_{lb}$. Thus, to reduce the number of parameters, the lower-bound of the distribution was set to $E_{lb} = 0$.
     
     
-%%%%%%%%%%%%%%%%%%%%	begin FIGURE 	%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%    begin FIGURE     %%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth]{Images/chapter2/figure3.pdf}
 \caption{Example mechanical testing result of (a) uniaxial and (b) and (c) equibiaxial strain test data from an anterior leaflet. The linear post recruitment region is shown by the black line, which indicates full collagen fiber recruitment. The (c) tangent modulus curve in equibiaxial strain test shows a clear flattened section in the post-transition region. Tangent modulus curve for uniaxial extension is not shown due to similarities.}
 \label{c2:fig:3}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%	 end FIGURE 	%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%     end FIGURE     %%%%%%%%%%%%%%%%%%%%
 
 
 
 
 \subsubsection{Elastin fiber model} \label{c2:sec:elastinfibermodel}
 
-    To determine the elastin fiber model (Sections \ref{sec:elastinconsiderations} Elastin fiber network, \ref{sec:collagenconsiderations} Single fiber models), we utilized the low stress region of the mechanical response. Due to the collagen fiber recruitment, we can retroactively determine the Elb of the recruitment distribution as the point when the cumulative distribution is less than 1\% (typically less than 3–8 kPa). Since collagen does not contribute significantly in this region, the response in this region can be considered entirely due to elastin (Fig. \ref{c2:fig:4}a). In pilot studies, we found that $d>1$ in equation \ref{eqn:elastinfiberlaw}. In fact, the exponent for the ventricularis and atrialis layer appeared to be different. Thus, we allowed d to vary during parameter estimation rather than being a set to a constant value.
+    To determine the elastin fiber model (Sections \ref{sec:elastinconsiderations} Elastin fiber network, \ref{sec:collagenconsiderations} Single fiber models), we utilized the low stress region of the mechanical response. Due to the collagen fiber recruitment, we can retroactively determine the Elb of the recruitment distribution as the point when the cumulative distribution is less than 1\% (typically less than 3–8 kPa). Since collagen does not contribute significantly to this region, the response in this region can be considered entirely due to elastin (Fig. \ref{c2:fig:4}a). In pilot studies, we found that $d>1$ in equation \ref{eqn:elastinfiberlaw}. In fact, the exponent for the ventricularis and atrialis layer appeared to be different. Thus, we allowed d to vary during parameter estimation rather than being a set to a constant value.
 
 
-%%%%%%%%%%%%%%%%%%%%	begin FIGURE 	%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%    begin FIGURE     %%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{Images/chapter2/figure4.pdf}
-\caption{Example of the best fit from an anterior leaflet. The (a) equibiaxial stress protocol was fit with only the elastin (green) first, followed by fitting the collagen only while keeping the elastin fixed. (b) The final fit of all “physiological” protocols are shown. (c) The two extra-physiological protocols, which were not fit, is show. This suggests that the model have good predictive capability.}
+\caption{Example of the best fit from an anterior leaflet. The (a) equibiaxial stress protocol was fit with only the elastin (green) first, followed by fitting the collagen only while keeping the elastin fixed. (b) The final fit of all “physiological” protocols are shown. (c) The two extra-physiological protocols, which were not fit, is shown. This suggests that the model have good predictive capability.}
 \label{c2:fig:4}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%	 end FIGURE 	%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%     end FIGURE     %%%%%%%%%%%%%%%%%%%%
 
 
 
 
 \subsubsection{Parameter estimation part 1 – collagen fiber recruitment} \label{c2:sec:2254}
 
-    From the above analysis, the number of parameters was reduced to 22 (Table \ref{c2tab:modelparameters}). To start of the parameter estimation, we took advantage of the simplified kinematics of the uniaxial and EB test data to isolate the effects of collagen fiber recruitment in a simplified fiber recruitment model. For both datasets, the collagen fiber network in the fibrosa and ventricularis were idealized as a family of uni-directionally aligned fibers, with the elastin fibers neglected as their contributions to the total stress were insignificant in this loading state. Also note that for the EB tests the fiber ensemble stress can be determined directly by \cite{sacks_biaxial_2000}.
-        %-------------------	begin EQUATION 	-------------------%
+    From the above analysis, the number of parameters was reduced to 22 (Table \ref{c2tab:modelparameters}). To start with the parameter estimation, we took advantage of the simplified kinematics of the uniaxial and EB test data to isolate the effects of collagen fiber recruitment in a simplified fiber recruitment model. For both datasets, the collagen fiber network in the fibrosa and ventricularis were idealized as a family of uni-directionally aligned fibers, with the elastin fibers neglected as their contributions to the total stress were insignificant in this loading state. Also, note that for the EB tests the fiber ensemble stress can be determined directly by \cite{sacks_biaxial_2000}.
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{c2eqn:ensembleform}
         \begin{aligned}
         S_{ens} = S_{11} + S_{22} \quad \text{for} \quad E_{11} = E_{22}, E_{12} = 0
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     We assumed in this first step that the recruitment distribution is orientation invariant, so that the collagen recruitment function $D(\mathbf{\xi},E_s) = D(\{\mu_r, \sigma_r, E_{lb}, E_{ub}\})$. $E_{ub}$ was determined by the transition point to the linear region (Fig. \ref{c2:fig:3}), leaving only $\mu r$, $\sigma r$ to be fit in this part of the parameter estimation. 
     
     
 \subsubsection{Parameter estimation part 2 - full planar biaxial mechanical data set}
 
-    Ideally, the measured ODFs $\Gamma(\theta)$ from the same specimen should be directly inserted into Eqn. \ref{eqn:multilayeredstressform}. However, in practice, we found that the ODFs had to be fitted to adjust for the specimen to specimen variability. Nevertheless, the mean best fitted ODFs can be compared to the mean measured ODFs to ensure that the estimate parameters are reasonable comparing to the true value. We expedited the process by assuming that the ODFs for each specimen is not significantly different from the true measured mean ODFs. Thus, the mean ODFs can be used as an initial guess and speed up the convergence to the optimal value. The use of a global algorithm will also ensure the optimized parameters do not become trapped at the mean value. Similarly, the estimated recruitment distribution $D(\mathbf{\xi}, x)$ is also obtain from independent specimens. The recruitment distribution parameters $\mathbf{\xi}$ are again used only as initial guesses and parameter validation.
+    Ideally, the measured ODFs $\Gamma(\theta)$ from the same specimen should be directly inserted into Eqn. \ref{eqn:multilayeredstressform}. However, in practice, we found that the ODFs had to be fitted to adjust for the specimen to specimen variability. Nevertheless, the mean best-fitted ODFs can be compared to the mean measured ODFs to ensure that the estimated parameters are reasonable comparing to the true value. We expedited the process by assuming that the ODFs for each specimen is not significantly different from the true measured mean ODFs. Thus, the mean ODFs can be used as an initial guess and speed up the convergence to the optimal value. The use of a global algorithm will also ensure the optimized parameters do not become trapped at the mean value. Similarly, the estimated recruitment distribution $D(\mathbf{\xi}, x)$ is also obtain from independent specimens. The recruitment distribution parameters $\mathbf{\xi}$ are again used only as initial guesses and parameter validation.
     
 
-    Taking a similar approach to Fata et al. \cite{fata_insights_2014}, we first examined the equibiaxial stress protocol ($P_{11}:P_{22}$ = 1:1), which is the best approximation of the in vivo loading state of the MV. The low stress region as defined in section \ref{c2:sec:elastinfibermodel} was used to fit the elastin (Fig. \ref{c2:fig:4}a). This is easily identified as the nearly linear response before the exponential like collagen response. Furthermore, due to limitations concerning the elastin model form, where the elastin response can increase exponentially to unrealistically surpass the response of the collagen, the exponent parameter d for the elastin (Table \ref{c2tab:modelparameters}) was constrained to be less than 3.5. Next, the remaining high stress region was used to fit the collagen fiber response independently. Using this coupled approach, we were able to minimize the search space to the 12 parameters associated with collagen (Table \ref{c2tab:modelparameters}). Once a reliable estimate of the parameters was obtained for this protocol, the inner 3 protocols (3:4, 1:1, 4:3) were fit using the existing parameters as the initial guess. We then progressed to the remaining “physiological” protocols (1:2, 3:4, 1:1, 4:3, 2:1) once again keeping the previous parameters as the initial guess to obtain better estimated parameters.
+    Taking a similar approach to Fata et al. \cite{fata_insights_2014}, we first examined the equibiaxial stress protocol ($P_{11}:P_{22}$ = 1:1), which is the best approximation of the in vivo loading state of the MV. The low stress region as defined in section \ref{c2:sec:elastinfibermodel} was used to fit the elastin (Fig. \ref{c2:fig:4}a). This is easily identified as the nearly linear response before the exponential-like collagen response. Furthermore, due to limitations concerning the elastin model form, where the elastin response can increase exponentially to unrealistically surpass the response of the collagen, the exponent parameter d for the elastin (Table \ref{c2tab:modelparameters}) was constrained to be less than 3.5. Next, the remaining high-stress region was used to fit the collagen fiber response independently. Using this coupled approach, we were able to minimize the search space to the 12 parameters associated with collagen (Table \ref{c2tab:modelparameters}). Once a reliable estimate of the parameters was obtained for this protocol, the inner 3 protocols (3:4, 1:1, 4:3) were fit using the existing parameters as the initial guess. We then progressed to the remaining “physiological” protocols (1:2, 3:4, 1:1, 4:3, 2:1) once again keeping the previous parameters as the initial guess to obtain better-estimated parameters.
     
     
-    Preliminary attempts demonstrated that gradient algorithms were unable to converge to the proper solution and tended to become unable to handle local minimas. As a result, we employed the genetics-based differential evolution algorithm to perform the optimization, similar to Fata et al. \cite{fata_insights_2014}. To narrow down the search space and guide the optimization, initial guess was derived from the above mechanical studies (Section \ref{c2:sec:mechanicalstudies}). Parameter estimation was performed using a custom program written in Mathematica (Wolfram Research Corp.).
+    Preliminary attempts demonstrated that gradient algorithms were unable to converge to the proper solution and tended to become unable to handle local minima. As a result, we employed the genetics-based differential evolution algorithm to perform the optimization, similar to Fata et al. \cite{fata_insights_2014}. To narrow down the search space and guide the optimization, initial guess was derived from the above mechanical studies (Section \ref{c2:sec:mechanicalstudies}). Parameter estimation was performed using a custom program written in Mathematica (Wolfram Research Corp.).
     
 
 
@@ -358,17 +358,17 @@
 
 \subsection{Model validation} \label{c2:sec:26}
 
-    The mean fitted fiber ODFs $\Gamma(\theta)$ from each layer of the MV anterior leaflet were compared to the measured ODFs obtained from SHG imaging (section \ref{c2sec:structure}). Since the orientation of the fibers are referenced to the laboratory testing or imaging configurations for the mechanical and imaging data respectively, which may be different, the preferred direction of the $\Gamma(\theta)$ were rotated to $\mu_\theta = 0^\circ$ to give the appropriate comparison. Next, in the SAXS study \cite{liao_relation_2007}, the average fibril strain for all fibrils in the leaflet, $\bar{\epsilon}_\mathrm{fibril} = \bar{\lambda}_t - 1$, where  is the mean true stretch of the fibrils, was measured. Since the loading protocol was equibiaxial stress ($P_{11}$:$P_{22}$ = 1:1), the tissue was in an anisotropic strain state, with each fiber ensemble experience different ensemble strain. Additionally, the fiber slack strain reduces the effective stiffness of the fibrils at the tissue-level (Eqn. \ref{eqn:collagenfiberlaw}). Hence we needed to incorporate the $\Gamma_c(\theta)$ as well as collagen fiber recruitment distribution ($D(\mathbf{\xi}, x)$) in the SAXS simulations. The correct fiber modulus ($\eta$) is also necessary to determine the tissue-level stress. Therefore, SAXS gives us an independent method to validate the collagen network model used in this study.
+    The mean fitted fiber ODFs $\Gamma(\theta)$ from each layer of the MV anterior leaflet were compared to the measured ODFs obtained from SHG imaging (section \ref{c2sec:structure}). Since the orientation of the fibers is referenced to the laboratory testing or imaging configurations for the mechanical and imaging data respectively, which may be different, the preferred direction of the $\Gamma(\theta)$ was rotated to $\mu_\theta = 0^\circ$ to give the appropriate comparison. Next, in the SAXS study \cite{liao_relation_2007}, the average fibril strain for all fibrils in the leaflet, $\bar{\epsilon}_\mathrm{fibril} = \bar{\lambda}_t - 1$, where  is the mean true stretch of the fibrils, was measured. Since the loading protocol was equibiaxial stress ($P_{11}$:$P_{22}$ = 1:1), the tissue was in an anisotropic strain state, with each fiber ensemble experience different ensemble strain. Additionally, the fiber slack strain reduces the effective stiffness of the fibrils at the tissue-level (Eqn. \ref{eqn:collagenfiberlaw}). Hence we needed to incorporate the $\Gamma_c(\theta)$ as well as collagen fiber recruitment distribution ($D(\mathbf{\xi}, x)$) in the SAXS simulations. The correct fiber modulus ($\eta$) is also necessary to determine the tissue-level stress. Therefore, SAXS gives us an independent method to validate the collagen network model used in this study.
     
     
     To simulate the full SAXS response, as compared to those measured by Liao et al. \cite{liao_relation_2007}, we assume standard affine kinematics (section \ref{sec:generalconsiderations}) \cite{lee_presence_2015}. Thus the fibril stretch is equal to the true stretch of the collagen fibers. Using structural parameters determined from parameter estimation, we simulated a population of fibers based on the fiber ODF and collagen recruitment distributions. The fibers were then deformed based on the EB tension protocol. This corresponds to a mean true fiber stretch given by
-        %-------------------	begin EQUATION 	-------------------%
+        %-------------------    begin EQUATION     -------------------%
         \begin{equation}\label{c2:eqn:fibrilstrain}
         \begin{aligned}
         \bar{\lambda}_t = \int_\theta\Gamma(\theta)\left[\int_1^{\lambda_{ens}(\theta)}D(\mathbf{\xi},x)\frac{\lambda_{ens}(\theta)}{x}\dif x\right]\dif \theta
         \end{aligned}
         \end{equation}
-        %-------------------	 end EQUATION 	-------------------%
+        %-------------------     end EQUATION     -------------------%
     The resulting mean fibril strains $\bar{\epsilon}_\mathrm{fibril} = \bar{\lambda}_t-1$ were plotted against the measured tissue-level stresses and compared to the SAXS $\epsilon_\mathrm{fibril}$ \cite{liao_relation_2007}.
 
 

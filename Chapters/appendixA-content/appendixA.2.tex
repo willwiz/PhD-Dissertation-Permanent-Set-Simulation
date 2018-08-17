@@ -1,0 +1,111 @@
+\section{Methods}
+
+\subsection{Kinematics of a Planar Biaxial Test}
+    
+    Assuming a homogenous deformation, the kinematical description of the planar biaxial test is
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}
+        \begin{aligned}
+        x_1 = \lambda_1X_1+\gamma_1X_2, \quad x_2 = \lambda_2X_2+\gamma_2X_1, \quad x_3 = \lambda_3X_3
+        \end{aligned}\label{A:eqn:1}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+    where $X_k$ and $x_k$ are coordinates for material particles in the reference and current configurations, respectively, $\lambda_k$ are the stretches and $\gamma_k$ are the shears. The shear relative to the third axis is 0, with resulting deformation gradient tensor $\mathbf{F}$
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}
+        \begin{aligned}
+        \mathbf{F} = 
+        \begin{bmatrix}
+        \dpd{x_1}{X_1} & \dpd{x_1}{X_2} & \dpd{x_1}{X_3} \\
+        \dpd{x_2}{X_1} & \dpd{x_2}{X_2} & \dpd{x_2}{X_3} \\
+        \dpd{x_3}{X_1} & \dpd{x_3}{X_2} & \dpd{x_3}{X_3}
+        \end{bmatrix}
+        = 
+        \begin{bmatrix}
+        \lambda_1   & \gamma_1  & 0 \\
+        \gamma_2    & \lambda_2 & 0 \\
+        0           & 0         & \frac{1}{\lambda_1\lambda_2 - \gamma_1\gamma_2}
+        \end{bmatrix}
+        \end{aligned}\label{A:eqn:2}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+    Note that $F_{33} = (\lambda_1\lambda_2 - \gamma_1\gamma_2)^{-1}$ is computed by the incompressibility constraint $det(\mathbf{F}) = 1$. All specimen deformations are assumed to be completely quantified from the interior of the specimen (approximately the inner third by linear dimension or area) using fiducial markers or texture mapping techniques \cite{sacks_biaxial_2000}\cite{jor_estimating_2010}.
+    
+    
+\subsection{Analysis of Stress}
+
+\subsubsection{Planar Biaxial Testing Experimental Configuration}
+
+    Planar biaxial devices follow a typical design overall, but vary in the specific boundary conditions utilized. We start with a rectangular specimen with known side lengths $L_1$ and $L_2$, and an initial thickness $L_3$, and then mounted with resultant forces $f^{(1)}$ and $f^{(2)}$ (Fig. (Fig.1).1). Previously, we determined the stresses using
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}
+        \begin{gathered}
+        P_{11} = \frac{f_1^{(1)}}{A^{(1)}}, \quad P_{22} = \frac{f_2^{(2)}}{A^{(2)}}, \quad P_{11} = P_{22} = 0 \\
+        \mathbf{P}
+        =   \begin{bmatrix}
+            P_{11} & P_{12} \\
+            P_{21} & P_{22} 
+            \end{bmatrix}
+        \end{gathered}\label{A:eqn:3}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+    where $\mathbf{f^{(i)}}$ and $A^{(i)}$ are the axial forces and initial cross-sectional areas, respectively, with $i = {1,2}$ \cite{sacks_method_1999}. The Cauchy stress $\mathbf{t}$ and second Piola–Kirchhof stress tensor $\mathbf{S}$ are computed using standard formulations $\mathbf{t} = \mathbf{P} \cdot \mathbf{F}^\mathsf{T}$ and $\mathbf{S} = \mathbf{F}^{-1}\mathbf{P}$.
+    
+    
+    It should be noted that the methods of attachment are generally separated into tethered \cite{sacks_biaxial_2000}\cite{bellini_biaxial_2011}\cite{azadani_comparison_2012}\cite{kamenskiy_passive_2014}\cite{gregory_comparison_2011} and clamped boundaries \cite{sun_effects_2005}\cite{oconnell_human_2011}\cite{sommer_multiaxial_2013}\cite{hu_influence_2013}\cite{simon-allue_unraveling_2014}. In the present work, we focus on tethered boundary configurations. We do not intend to convey that any particular method is optimal for any application, but rather to show that a tethered attachment system, with its ability to allow free lateral displacements and to apply relatively uniform distribution of boundary forces, can be used to accurately obtain the stress–strain relation directly from the experimentally obtained data. We feel this is important as the first step in any tissue mechanical analysis in order to establish the form of the strain energy function, which is best done using directly determined S and F whenever possible. As such, this method will only require direct measurement of (1) initial specimen dimensions, (2) fiducial marker positions, and (3) the measured axial forces. Due to the intrinsic differences in the stress state induced, this method will not be directly applicable to clamped boundaries. Additionally, the following assumptions are made throughout the present work:
+        \begin{enumerate}
+        \item The tissue is at all times in quasi-static equilibrium.
+        \item The deformations are homogeneous, and consequentially:
+            \begin{enumerate}
+                \item The specimen is located at the center of the apparatus and does not translate.
+                \item The testing system is symmetric.
+            \end{enumerate}
+        \item The applied tractions are evenly distributed per side, given by the average applied by the four attached tethers.
+        \end{enumerate}
+    
+    
+\subsubsection{Mounting and Preconditioning Effects}
+
+    Distortions will occur to some extent during mounting and testing due to the high compliance of soft tissue specimen in the low stress range. Although the mechanisms for preconditioning effects remain unknown, it is known that the effect is not strictly viscoelastic \cite{sacks_biaxial_2000}\cite{lanir_structural_1979}\cite{lanir_two_1974}. Instead, it is similar to permanent-set like effects, but is reversible over time \cite{sacks_biaxial_2000}. For example, it has been shown that the process itself reverts over the course of 24 hrs in chemically treated pericardium tissue \cite{sacks_biaxial_2000}. Thus, the effect only lasts for the current test and is utilized to induce a stable, repeatable response \cite{sacks_biaxial_2000}\cite{lanir_structural_1979}\cite{lanir_two_1974}. The new unloaded configuration can be quite different from the initial rectangular state.
+    
+    
+    To compensate for these effects, we first establish the following configurations (Fig. (Fig.2).2). The initial free floating state $\Omega_0$ is defined to be the initial state of the specimen immediately after being cut to size, and is well defined and rectangular. After mounting, preconditioning, and other inelastic run-time effects, the specimen is then fully unloaded and the new unloaded geometry is defined as $\Omega_1$. We define a deformation $\prescript{1}{0}{\mathbf{F}}$ which maps $\Omega_0$ to $\Omega_1$. $\Omega_1$ is the reference configuration used for all stress and strain calculations, with the associated deformation $\prescript{t}{0}{\mathbf{F}}$.
+    
+    
+    Direct dimensional measurements of $\Omega_1$ requires removing the specimen from the device, which must be done carefully to avoid damaging the tissue and inducing additional distortions. An alternative is to image the specimen in situ, which poses its own sets of challenges. Moreover, stress is only induced in the region bounded by the tethers \cite{sun_effects_2005}\cite{hu_influence_2013}\cite{simon-allue_unraveling_2014}, with the surrounding tissue deforming minimally. Therefore, the tether bounded area is best used for the specimen geometry. As a result, the preconditioning effects are accrued in the region of interest (ROI, region bounded by the markers) may not be represented by the visible edges of the specimen. However, $\Omega_1$ can be easily estimated from the deformation in the inner region of the specimen via the fiducial markers, assuming the overall specimen deformation is approximately homogenous. This simplifies the approach and also provides an easy way of determining the thickness, all without physically removing the specimen from the device. We will thus assume that $\Omega_1$ is known precisely and that the specimen undergoes a homogenous deformation quantified by the strain measurement. Note that the magnitude of preconditioning effects can vary considerably in different tissues. For example, it can be modest for a heart valve leaflet (Fig. 3(a)) or very significant for a murine right ventricle (RV) free wall tissue specimen (Fig. 3(b)).
+    
+    
+
+
+\subsubsection{Equilibrium}
+
+    In direct analysis of biaxial experimental data, we have observed that the shear components of $\mathbf{t}$ derived from the previous methods \cite{freed_hypoelastic_2010} will not be equal, violating equilibrium. In addition to preconditioning and inelastic effects, the overall geometry and orientation of the specimen are not exactly predicted by the deformation at the center region of the specimen due to real tissue heterogeneities. These will induce the specimen to rotate slightly (i.e., undergo rigid body rotation) with respect to the applied forces, leading to no net moment on the specimen as a whole. This difference between the rigid body angle calculated with respect to the center of the specimen and the real rigid body angle produces a small angular moment in the derived stress.
+    
+    
+    To account for this, we assume the body forces are negligible, and the rigid body moment $\mathbf{M}$ is given by
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}\label{A:eqn:4}
+        \begin{aligned}
+        \mathbf{M} = \int_S \mathbf{r}\times\mathbf{T}\dif S
+        \end{aligned}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+    where $\mathbf{r}$ is the position vector and $\mathbf{T}$ is the boundary traction vector. We parameterize $\mathbf{r}$ as $\mathbf{r}(s,\theta) = s \mathbf{x}^2 + (1-s)\mathbf{x}^1, \, s\in[0,1]$, where $\mathbf{x}^1 = \prescript{t}{0}{\mathbf{F}}(\theta)\cdot\mathbf{X}^1$ and $\mathbf{x}^2 = \prescript{t}{0}{\mathbf{F}}(\theta)\cdot\mathbf{X}^2$ are the corner points bounding the sides in the current state, $\theta$ is the rigid body angle of the deformation gradient, and $l_3$ is the current thickness. Thus, we are left with the sum of the following integral for all four sides:
+        %-------------------	begin EQUATION 	-------------------%
+        \begin{equation}\label{A:eqn:5}
+        \begin{aligned}
+        M_3(\theta) = l_3 \int_0^1(\mathbf{r}(\theta,s)\times\mathbf{T}|\mathbf{r}'(\theta,s)|\dif s.
+        \end{aligned}
+        \end{equation}
+        %-------------------	 end EQUATION 	-------------------%
+    
+    
+    We note that in the present system (Fig. 1(a)) the orientation of the traction $\mathbf{T}$ changes as the specimen deforms, and we thus employ the following approach to enforce momentum balance by adjusting $\theta$ (Fig. (Fig.4).4). The initial estimate of the rigid body angle, $\theta$, is derived from the deformation gradient $\prescript{t}{0}{F}$. Based on $\theta$, the quantities describing the current geometry (e.g., tether orientations) are derived. The first moment can be calculated according to equation \ref{A:eqn:5} and can serve as a tolerance check. If the moment does not converge to zero, a new rigid body angle $\theta$ is proposed and the process is repeated until equilibrium is satisfied. Once the best $\theta$ is found, the current geometry of the specimen can be determined from the deformation gradient $\prescript{t}{0}{\mathbf{F}}$. This, when paired with the known tractions $\mathbf{T}$, allows us to determine the Cauchy stress from $\mathbf{T} = \mathbf{t}\cdot\mathbf{n}$. In practice, the rigid body rotation is well within the experimentally measured rigid body rotations, typically $<3$ deg. Note that all calculations were implemented in a custom written Mathematica 10 program.
+    
+    
+\subsubsection{Derivation of Traction Vectors for Self-Equilibrating Tethered Systems}
+
+    \paragraph{Device Geometry} The traction vector should be determined based on the testing system. For devices such as BioTester (Cell Scale), where one end of the tethers is fixed, the orientation of the tethers is easier to determine. Self-equilibrating systems can be more complicated. Typical self-equilibrating tether systems involve wrapping tethers around a pulley with the ends attached to the specimen. For two-point attachment, only one pulley is involved. For four-point attachment, two pulleys are joined by a bar that can rotate about its midpoint \cite{sacks_biaxial_2000}. The number of pulleys can be doubled for eight-point attachment, 16-point attachment, etc. In the case of two tethers, the system is constrained by the total length of the tether around the pulley which can be used to determine the displacement of the actuator. For every additional pulley added, a degree of freedom must be added representing the orientation of the bar joining it to the rest of the system. In all cases, the number of the constraints is equal to the number of degrees of freedom. We shall use the four-point attachment as an example, as it is the most commonly used number of tethers. We will assume the tethers are evenly spread (Fig. (Fig.11).
+    
+    
+    \paragraph{Traction Orientation Vectors} The general process for determining the orientation of the traction vectors is in three steps. (1) Determine the locations of orientation of the tethers in the initial unloaded state; this can be measured directly. (2) Determine the locations of the end of the tethers on the tissue using the deformation gradient. (3) Determine the remaining end of the tethers based on the constraints and mechanisms unique to that system. For devices such as BioTester (Cell Scale), step 3 is simple as the ends are fixed. The midpoint of the tethers on the specimen can be produced by the deformation gradient. The midpoint of the tether at the actuator only displaces with the actuator. The displacement of the actuator $\delta$ can be measured directly, or determined using optimization by assuming the distance from the actuator and specimen remains constant, rather like how $\delta$ is determined below. For our self-equilibrating example, we will denote the four tethers attached to the tissue using the vectors $\mathbf{v}^1$, $\mathbf{v}^2$, $\mathbf{v}^3$, and $\mathbf{v}^4$. The tether vectors $\mathbf{v}^i$ are given by the difference between the tangent points on the shafts and the attachment points on the tissue. Let $\mathbf{o}_Y$ be the pivot point of the lever system, which is moved along the experimental axis by the linear actuators. The position of $\mathbf{o}_Y$ is indeterminate during the experiment. $\mathbf{Y}^i$ are the position of tangent points on the shafts of the lever system relative to $\mathbf{o}_Y$ in the initial free floating configuration. It is clear that the current coordinates of the tangent points on the shafts is simply $\mathbf{y}^i = R(\phi)\mathbf{Y}^i + \mathbf{o}_Y$, where $R(\phi)$ is a rotation matrix about $\mathbf{o}_Y$ and $\phi$ is the angle rotated to equilibrate the tension for all four tethers (Fig. (Fig.11).11). Furthermore, let $\mathbf{X}^i$ be the four tether attachment points on the tissue in the initial free floating configuration, The current coordinates of the attachment points are simply determined using the overall deformation gradient $\prescript{t}{0}{\mathbf{F}} = \prescript{t}{1}{\mathbf{F}}\prescript{1}{0}{\mathbf{F}}$, $\mathbf{x} = \prescript{t}{0}{\mathbf{F}}\mathbf{X}$ x=t0F·X. Thus the tether vectors, $\mathbf{v}^i$, are given by the difference

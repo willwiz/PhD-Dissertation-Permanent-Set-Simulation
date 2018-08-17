@@ -10,7 +10,7 @@
 
 \subsection{Constitutive model for exogenous crosslinking}
 
-	We have previously developed the first constitutive model for exogenously crosslinked collagenous tissues \cite{sacks_novel_2016} and determined the following three contributors to the mechanical response: collagen fibers, EXL matrix and fiber-fiber interactions, where the total strain energy density function is given by
+	We have previously developed the first constitutive model for exogenously crosslinked collagenous tissues \cite{sacks_novel_2015} and determined the following three contributors to the mechanical response: collagen fibers, EXL matrix and fiber-fiber interactions, where the total strain energy density function is given by
 \begin{equation} \label{eq:totalstrainenergy}
     \Psi = \phi_\mathrm{col} \left[ \Psi_\mathrm{col} + \Psi_\mathrm{int}\right] + \phi_m \Psi_m
 \end{equation}
@@ -23,7 +23,7 @@
 \label{fig:EXLforms}
 \end{figure}
 	
-    The interaction model form, $\Psi_\mathrm{int}$, was developed utilizing the pseudo invariant $I_8$, which is a function of the stretch and angle between two fiber ensembles oriented along the angle $\alpha$ and $\beta$ directions in the tissue (Fig. \ref{fig:structuralconvection}), and then separated it into its rotational and extensional components\cite{sacks_novel_2016} (Fig. \ref{fig:EXLforms}C\&D),
+    The interaction model form, $\Psi_\mathrm{int}$, was developed utilizing the pseudo invariant $I_8$, which is a function of the stretch and angle between two fiber ensembles oriented along the angle $\alpha$ and $\beta$ directions in the tissue (Fig. \ref{fig:structuralconvection}), and then separated it into its rotational and extensional components\cite{sacks_novel_2015} (Fig. \ref{fig:EXLforms}C\&D),
 \begin{equation} \label{eq:I8invariant}
 \begin{gathered}
 I_8 = \mathbf{n}_ \alpha \cdot\mathbf{C}\cdot\mathbf{n}_\beta = \lambda_\alpha \lambda_\beta \cos(\alpha - \beta), \\
@@ -43,7 +43,7 @@ I_8^{\mathrm{ext}} = \lambda_\alpha \lambda_\beta, \qquad I_8^{\mathrm{rot}} = \
 
 \subsection{Extension of the structural derivation of the fiber-fiber interactions term}
 
-    The key to our approach in the constitutive model for the permanent set effect is to use the change in the collagen fiber architecture to predict the new mechanical response. Thus, having a full structural model, including a full structural derivation of the fiber-fiber interactions, is crucial. As in the previous model form \cite{sacks_novel_2016}, we will only keep the extensional component $I_8^\mathrm{ext}$. In addition, since collagen fibers do not bear stress until fully straightened \cite{soares_biomechanical_2016}, we also assume that \emph{collagen fibers do not play a role in the interactions of the fiber ensembles until they are straightened}. Following the same approach common in structural models, we first define the stretch of the collagen fibers after it's straightened, which is also the true fiber stretch ($\lambda_t$) defined in Zhang et al. \cite{zhang_meso_2016}, to be $\lambda_t = \lambda_\mathrm{ens}/\lambda_s$, where $\lambda_\mathrm{ens}$ is the stretch of the collagen fiber ensemble and $\lambda_s$ is the slack stretch required to straighten the collagen fiber crimp. We assumed that interactions do not occur until the fibers are straighten, so the extensional invariant should be a function of the true stretch of the individual fibers, $\lambda_t$, rather than the stretch of the whole fiber ensembles as defined in equation \ref{eq:I8invariant},
+    The key to our approach in the constitutive model for the permanent set effect is to use the change in the collagen fiber architecture to predict the new mechanical response. Thus, having a full structural model, including a full structural derivation of the fiber-fiber interactions, is crucial. As in the previous model form \cite{sacks_novel_2015}, we will only keep the extensional component $I_8^\mathrm{ext}$. In addition, since collagen fibers do not bear stress until fully straightened \cite{soares_biomechanical_2016}, we also assume that \emph{collagen fibers do not play a role in the interactions of the fiber ensembles until they are straightened}. Following the same approach common in structural models, we first define the stretch of the collagen fibers after it's straightened, which is also the true fiber stretch ($\lambda_t$) defined in Zhang et al. \cite{zhang_meso_2016}, to be $\lambda_t = \lambda_\mathrm{ens}/\lambda_s$, where $\lambda_\mathrm{ens}$ is the stretch of the collagen fiber ensemble and $\lambda_s$ is the slack stretch required to straighten the collagen fiber crimp. We assumed that interactions do not occur until the fibers are straighten, so the extensional invariant should be a function of the true stretch of the individual fibers, $\lambda_t$, rather than the stretch of the whole fiber ensembles as defined in equation \ref{eq:I8invariant},
 \begin{equation}
 I_8^{\mathrm{ext}} = \frac{\lambda_\alpha \lambda_\beta}{\prescript{}{\alpha}{\lambda}_s \prescript{}{\alpha}{\lambda}_s},
 \end{equation}

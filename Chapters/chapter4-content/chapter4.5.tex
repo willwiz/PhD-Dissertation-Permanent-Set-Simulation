@@ -116,7 +116,7 @@
 
 \subsection{Extension to the EXL matrix model for changes in reference configuration}
 
-	We start by extending the EXL matrix model from our previous model \cite{sacks_novel_2016}. The strain energy is a modified form of the Yeoh model, which exhibits the following stress-strain relation,
+	We start by extending the EXL matrix model from our previous model \cite{sacks_novel_2015}. The strain energy is a modified form of the Yeoh model, which exhibits the following stress-strain relation,
 \begin{equation}
 \begin{split}
 \Psi_m = &\frac{\eta_m}{2} \left( \frac{1}{\alpha}\left( I_1 -3\right)^{\alpha} + \frac{r}{\beta} \left( I_1 -3\right)^{\beta} \right), \\
@@ -187,7 +187,7 @@ b(s) = \phi_m \mathrm{Exp}\left[-k  \cdot s\right], \qquad a(s,\hat{s}) = \phi_m
 
 \subsection{Convection of the collagen fiber architecture} \label{sec:convection}
 
-    Now that the model form for the EXL matrix under permanent set is established, we need to consider how the collagen fiber architecture is convected by the change in reference configuration. The convection of the collagen fiber architecture is done through two parts: the ODF and the recruitment function. This is done by assuming that the collagen fiber architecture is convected under the affine assumption\cite{lee_presence_2015}. The form of the ODF and the recruitment distribution was previously described in Zhang \textit{et al.} \cite{zhang_meso_2016}, and the operation used to convect the collagen fiber architecture is given in Sacks \textit{et al}. \cite{sacks_novel_2016}. Briefly, the convected ODF $\Gamma_1$ is determined from the ODF in the 0-cycle state $\Gamma_0$ and the deformation $\prescript{1}{0}{\mathbf{F}}$ by the conservation of the number of fiber $\Gamma(\theta_0) \mathrm{d}\theta_0 = \Gamma(\theta_1) \mathrm{d}\theta_1$ (Fig. \ref{fig:effectsofconvection}A). This is given by
+    Now that the model form for the EXL matrix under permanent set is established, we need to consider how the collagen fiber architecture is convected by the change in reference configuration. The convection of the collagen fiber architecture is done through two parts: the ODF and the recruitment function. This is done by assuming that the collagen fiber architecture is convected under the affine assumption\cite{lee_presence_2015}. The form of the ODF and the recruitment distribution was previously described in Zhang \textit{et al.} \cite{zhang_meso_2016}, and the operation used to convect the collagen fiber architecture is given in Sacks \textit{et al}. \cite{sacks_novel_2015}. Briefly, the convected ODF $\Gamma_1$ is determined from the ODF in the 0-cycle state $\Gamma_0$ and the deformation $\prescript{1}{0}{\mathbf{F}}$ by the conservation of the number of fiber $\Gamma(\theta_0) \mathrm{d}\theta_0 = \Gamma(\theta_1) \mathrm{d}\theta_1$ (Fig. \ref{fig:effectsofconvection}A). This is given by
 \begin{equation} \label{eq:pfODF}
 \begin{gathered}
 \Gamma_1\left( \prescript{1}{0}{\mathbf{F}},\theta_1 \right) = \Gamma_0\left( \theta_0\left( \prescript{1}{0}{\mathbf{F}},\theta_1\right)\right)\frac{\prescript{1}{0}{\lambda(\theta_0)}^2}{\prescript{1}{0}{J_\mathrm{2D}}}, \\
@@ -202,7 +202,7 @@ D_1(\prescript{1}{0}{\mathbf{F}}, \lambda_s) = \begin{cases} \frac{\operatorname
 \end{gathered}
 \end{equation}
 where $\prescript{1}{0}{\lambda(\theta_0)}$ is defined in equation \ref{eq:pfODF}, $(\prescript{}{1}{\lambda}_\mathrm{lb},\prescript{}{1}{\lambda}_\mathrm{ub})$ are the new bounds of the distribution after being convected, and $(\gamma_0,\gamma_1)$ are the shape parameters of the beta distribution function $B$ .
-The model form for collagen fibers in exogenously crosslinked BP after being convected by a change in geometry is previously presented in Sacks et al. \cite{sacks_novel_2016} and can also be used for the convection of the collagen fiber architecture due to the permanent set effect. 
+The model form for collagen fibers in exogenously crosslinked BP after being convected by a change in geometry is previously presented in Sacks et al. \cite{sacks_novel_2015} and can also be used for the convection of the collagen fiber architecture due to the permanent set effect. 
 The model form for the fiber ensemble interactions is given by equation \ref{eq:interaction}, where equations \ref{eq:pfODF} and \ref{eq:pfrecruitment} are substituted in for the ODF and recruitment distribution function for the mechanical response after permanent set.
 
 
@@ -220,7 +220,7 @@ The model form for the fiber ensemble interactions is given by equation \ref{eq:
 
 \subsection{Further considerations of the permanent set mechanism.}
 
-	In addition to the above considerations, we explored the the following as a means to validate the mechanisms we proposed for permanent set. This was done by performing an analysis on predicting the mechanical response after cyclic loading using only the convection of the collagen fiber architecture by the measured $\textbf{F}_{PS}$. The analysis takes the following steps: 1) Material model parameter estimation for the 0-cycle data for the strain controlled data. This is done using the approach from Sacks \textit{et al}.\cite{sacks_novel_2016}, with the constitutive model for collagen fibers and the EXL matrix from the same study, and the interaction model from equation \ref{eq:interaction}. 
+	In addition to the above considerations, we explored the the following as a means to validate the mechanisms we proposed for permanent set. This was done by performing an analysis on predicting the mechanical response after cyclic loading using only the convection of the collagen fiber architecture by the measured $\textbf{F}_{PS}$. The analysis takes the following steps: 1) Material model parameter estimation for the 0-cycle data for the strain controlled data. This is done using the approach from Sacks \textit{et al}.\cite{sacks_novel_2015}, with the constitutive model for collagen fibers and the EXL matrix from the same study, and the interaction model from equation \ref{eq:interaction}. 
 	2) Use equations \ref{eq:pfODF} and \ref{eq:pfrecruitment} (Sec.\ref{sec:convection}) to convect the collagen fiber architecture (Fig. \ref{fig:structuralconvection} and Fig. \ref{fig:effectsofconvection}). 
 	The deformation used to convect the collagen fiber architecture is determined from the fiducial markers. 
 	3) We compare the new convected exogenously crosslinked mechanical response to the experimental data.
@@ -317,7 +317,7 @@ To solve for the permanent set deformation ($\mathbf{F}_\mathrm{PS}$), and for t
 \end{equation}
 Of the 3 time points (0, 30, and 65 million cycles), we fit the first two time points (0 and 30 million cycles) and use the results to predict the response to cycling at 65 million cycles as a way to validate our model (Fig. \ref{fig:datamethods}A). We note that the mounted configuration of the specimen for mechanical testing and cyclic loading are not the same, thus there is a small rigid body rotation of the specimen between the two testing configurations. We will compensate for this during the parameter estimation, which is done as followed
 \begin{enumerate}
-\item Determine the 0-cycled mechanical response using the methods of Sacks \textit{et al}.\cite{sacks_novel_2016}
+\item Determine the 0-cycled mechanical response using the methods of Sacks \textit{et al}.\cite{sacks_novel_2015}
 \item Fit the permanent set deformation $\mathbf{F}_\mathrm{PS}$ and the mechanical response at the same time for the 30 million cycles time point
 	\begin{enumerate}
 	\item choose a $k $

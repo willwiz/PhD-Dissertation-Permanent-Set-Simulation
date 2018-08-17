@@ -5,19 +5,19 @@
 
 \subsection{Optimal \textit{in silico} loading paths for parameter estimation}
 
-	The optimal loading paths for reproducing the response of dense collagenous soft tissues such as bovine pericardium and porcine aortic valve consist of 8 loading paths (Fig. \ref{fig:doptimality}C): 5 loading paths consisting of only inplane extensions (Fig. \ref{fig:doptimality}D), and 3 with the addition of the shear component. The increase in D-optimality is significantly less after three loading paths for the in-plane extensions (Fig. \ref{fig:doptimality}A). Same is true for the loading paths with shear. These three loading paths are the equibiaxial stress (Fig. \ref{fig:doptimality}B, Blue), and two uniaxial loading paths (Black, Green). The type of stress is consistent with the stress used for parameter estimation. The loading paths with shear simply iterates on these three loading paths by adding the shear component, we specified the maximum strain to be applied to be $0.2$. We consider this to be the minimal number of loading paths necessary for parameter estimation. In practice, it's better to add the intermediate inplane tension loading paths (Red, Orange) as a precaution, forming the full set of 8 loading paths (Fig. \ref{fig:doptimality}C). 
-	
-	
-	The equi-biaxial stress loading path is the most important loading path. The D-optimality is $10^{-17}$ for the equi-biaxial loading path versus less than $10^{-300}$ (using \textit{Mathematica}'s extended precision) for other loading paths. The set of optimal loading paths will always contain the equi-biaxial stress loading path if the total number is odd, whereas it will always contain two loading paths just beside the equi-biaxial loading paths if it is even. The other loading paths complement the equi-biaxial loading path by spanning the range being searched. More details on the optimal loading path results are presented in appendix \ref{sec:optimalpaths}.
-	
-%-------------------	begin FIGURE 	-------------------%
+	The optimal loading paths for reproducing the response of dense collagenous soft tissues such as bovine pericardium and porcine aortic valve consist of 8 loading paths (Fig. \ref{fig:doptimality}C): 5 loading paths consisting of only inplane extensions (Fig. \ref{fig:doptimality}D), and 3 with the addition of the shear component. The increase in D-optimality is significantly less after three loading paths for the in-plane extensions (Fig. \ref{fig:doptimality}A). Same is true for the loading paths with shear. These three loading paths are the equibiaxial stress (Fig. \ref{fig:doptimality}B, Blue), and two uniaxial loading paths (Black, Green). The type of stress is consistent with the stress used for parameter estimation. The loading paths with shear simply iterate on these three loading paths by adding the shear component, we specified the maximum strain to be applied to be $0.2$. We consider this to be the minimal number of loading paths necessary for parameter estimation. In practice, it's better to add the intermediate inplane tension loading paths (Red, Orange) as a precaution, forming the full set of 8 loading paths (Fig. \ref{fig:doptimality}C). 
+    
+    
+    The equibiaxial stress loading path is the most important loading path. The D-optimality is $10^{-17}$ for the equibiaxial loading path versus less than $10^{-300}$ (using \textit{Mathematica}'s extended precision) for other loading paths. The set of optimal loading paths will always contain the equibiaxial stress loading path if the total number is odd, whereas it will always contain two loading paths just beside the equibiaxial loading paths if it is even. The other loading paths complement the equibiaxial loading path by spanning the range being searched. More details on the optimal loading path results are presented in appendix \ref{sec:optimalpaths}.
+    
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=5.5in]{Images/chapter5/doptimality}
 \caption{A) The best D-optimality value for a given number of loading paths used to generate the data, which stops increasing significantly after three. B) The stress-strain curve of the optimal set of five loading paths with no shear. C) The full set of optimal loading paths including the shear component are shown. The same colored loading paths are built upon the corresponding D) planar stretch loading paths by adding a shear component. }
 \label{fig:doptimality}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 
 
 
@@ -32,116 +32,116 @@
 
 \subsection{Parameter estimation and the quality of fit}
 
-    The time taken for parameter estimation (5-10 seconds) is significantly lower in comparison to meso-scale structural approaches, such for the mitral valve \cite{zhang_meso_2016} (10-40 minutes) and exogenously crosslinked tissues \cite{zhang_modeling_2017}(30 min - 4 hours). In addition, we found that the model scaling method significantly improves the consistency of convergence. Parameters converges in approximately 40-60 iterations regardless of starting point, whereas it can vary between 40-120 iterations without using scaling. The additional iterations occur within the valley like region in the objective function surface (Fig. \ref{fig:objfunctionsurfaces}), where the gradient and thus the step size is very small. Of course, we found both methods to be essentially equivalent with a sufficiently good initial guess. We note that the model scaling method does not improve the correlations between the exponent parameters $b_1-b_{13}$ in $Q$. With that being said, the correlations between the exponent parameters $b_1-b_{13}$ are significantly better than the correlations between these exponents and modulus $c_0$ (Fig. \ref{fig:gvsecorrelation} and Appendix \ref{sec:parametercorrelation} Table \ref{tb:correlationE} \& \ref{tb:correlationG} vs. Table \ref{tb:ABcorrelation}), which is not much of a problem for parameter estimation. It is difficult to further improve the parameter correlation of $Q$ without changing the form of the model, but, for our purpose, this is already sufficient. 
+    The time taken for parameter estimation (5-10 seconds) is significantly lower in comparison to meso-scale structural approaches, such for the mitral valve \cite{zhang_meso_2016} (10-40 minutes) and exogenously crosslinked tissues \cite{zhang_modeling_2017}(30 min - 4 hours). In addition, we found that the model scaling method significantly improves the consistency of convergence. Parameters converge in approximately 40-60 iterations regardless of starting point, whereas it can vary between 40-120 iterations without using scaling. The additional iterations occur within the valley like region in the objective function surface (Fig. \ref{fig:objfunctionsurfaces}), where the gradient and thus the step size is very small. Of course, we found both methods to be essentially equivalent with a sufficiently good initial guess. We note that the model scaling method does not improve the correlations between the exponent parameters $b_1-b_{13}$ in $Q$. With that being said, the correlations between the exponent parameters $b_1-b_{13}$ are significantly better than the correlations between these exponents and modulus $c_0$ (Fig. \ref{fig:gvsecorrelation} and Appendix \ref{sec:parametercorrelation} Table \ref{tb:correlationE} \& \ref{tb:correlationG} vs. Table \ref{tb:ABcorrelation}), which is not much of a problem for parameter estimation. It is difficult to further improve the parameter correlation of $Q$ without changing the form of the model, but, for our purpose, this is already sufficient. 
     
     
     Qualitatively, $\Psi_{eff}$ (Eqn. \ref{eqn:finalexponentialmodelformscaled}) matches the response of collagenous soft tissues reproduced using the structural model (Eqn. \ref{eqn:fullcollagen}). It is able to follow all the characteristics of the response function (derivatives of the strain energy density function), including the symmetry with respect to shear (Fig. \ref{fig:modelfit}). The average $R^2$ is 0.958 (n = 6) for the bovine pericardium specimens tested. We found similar values for porcine aortic valve leaflets. The main improvements are in the uniaxial strain regions. 
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/modelfit}
 \caption{Parameter estimation results showing that $\Psi_{eff}$ is able to replicate the response function of the structural model (Eqn. \ref{eqn:objectivefunction}) (Top) $S_m = \partial\Psi/\dif E_m$, (Middle) $S_n = \partial\Psi/\dif E_n$, and (Bottom) $S_\phi = \partial\Psi/\dif E_\phi$ for each pair of Green Lagrange strain components.}
 \label{fig:modelfit}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 
 
     For a more detailed comparison, we replicated the result of Sun \textit{et al.} \cite{sun_biaxial_2003}. Similarly, we found that the generalized Fung model (Eqn. \ref{eqn:generalizedfungmodela}) fitted the five loading paths in the physiologic range very well (Fig. \ref{fig:fungphyfit}), but predicted the remaining unfitted loading paths poorly (Fig. \ref{fig:fungphypred}). When the non-physiologic loading paths are fit ((Fig. \ref{fig:fungphyfit})), the remaining protocols are still predicted poorly. However, we do note here that the generalized Fung model cannot fit the non-physiologic protocols very well, illustrating the limitation of the generalized Fung model at fitting the response of soft tissue in a wide range of deformations (Section \ref{sec:possibleforms}). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/fungphyfit}
-\caption{Reproducing the results of Sun \textit{et al.} \cite{sun_biaxial_2003} showing that the generalized Fung model is able to fit the loading paths in the physiologic range very well. A) The $S_{11}$ surface fitted to the data points. B) The $S_{22}$ surface fitted to the data points. C) Best fit of the $S_{11}$ component of the loading paths. D) Best fit of the $S_{22}$ component of the loading paths.}
+\caption{Reproducing the results of Sun \textit{et al.} \cite{sun_biaxial_2003} showing that the generalized Fung model is able to fit the loading paths in the physiologic range very well. A) The $S_{11}$ surface fitted to the data points. B) The $S_{22}$ surface fitted to the data points. C) The best fit of the $S_{11}$ component of the loading paths. D) The best fit of the $S_{22}$ component of the loading paths.}
 \label{fig:fungphyfit}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/fungphypred}
 \caption{Reproducing the results of Sun \textit{et al.} \cite{sun_biaxial_2003} showing the A) $S_{11}$ component and B) $S_{22}$ component of the remaining unfitted loading paths are predicted poorly from fit (Fig. \ref{fig:fungphyfit}). The inset in A shows the corresponding loading paths.}
 \label{fig:fungphypred}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/fungoutfit}
-\caption{Reproducing the results of Sun \textit{et al.} \cite{sun_biaxial_2003} showing the best fit of the generalized Fung model to the loading paths in the non-physiologic range is poor. A) The $S_{11}$ surface fitted to the data points. B) The $S_{22}$ surface fitted to the data points. C) Best fit of the $S_{11}$ component of the loading paths. D) Best fit of the $S_{22}$ component of the loading paths.}
+\caption{Reproducing the results of Sun \textit{et al.} \cite{sun_biaxial_2003} showing the best fit of the generalized Fung model to the loading paths in the non-physiologic range is poor. A) The $S_{11}$ surface fitted to the data points. B) The $S_{22}$ surface fitted to the data points. C) The best fit of the $S_{11}$ component of the loading paths. D) The best fit of the $S_{22}$ component of the loading paths.}
 \label{fig:fungoutfit}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/fungoutpred}
 \caption{Reproducing the results of Sun \textit{et al.} \cite{sun_biaxial_2003} showing the A) $S_{11}$ component and B) $S_{22}$ component of the equi-biaxial stress loading path are predicted poorly from fit (Fig. \ref{fig:fungoutfit}). The inset in A shows the corresponding loading paths.}
 \label{fig:fungoutpred}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
 
-	Using $\Psi_{eff}$ (Eqn. \ref{eqn:finalexponentialmodelformscaled}) (Fig. \ref{fig:effphyfit}) improves these results, but using non-optimal loading paths, such as based on Fung \textit{et al.}'s prestrained protocols \cite{fung_pseudoelasticity_1979}, lead to poor predictions for other loading paths (Fig. \ref{fig:effphypred}). Although not obvious at first, $\Psi_{eff}$ severely underestimates the response of the material in the low stress region. The D-optimality with two protocols in this prestrained range is only $1.35$, which improves to $1.98\times 10^4$ with six protocols. This pales in comparison to $9.7 \times 10^2$ for the two optimal protocols and $2.2 \times 10^7$ with three optimal protocols. When both $\Psi_{eff}$ and three optimal loading paths are utilized, we found that the loading paths are both fitted (Fig. \ref{fig:effoptfit}) and predicted very well (Fig. \ref{fig:effoptpred}). We also tested other non-optimal loading paths with modifications to the form of $\Psi_{eff}$ (Appendix \ref{sec:otherresults}). To briefly summarize these results, with an optimal set of loading paths, $\Psi_{eff}$ is able to fully reproduce the response of collagenous soft tissue for a wide range of deformation. However, without optimal loading paths, the form of $\Psi_{eff}$ can have unpredictable impact on the predicted response, even though the quality of fit is very similar. 
+    Using $\Psi_{eff}$ (Eqn. \ref{eqn:finalexponentialmodelformscaled}) (Fig. \ref{fig:effphyfit}) improves these results, but using non-optimal loading paths, such as based on Fung \textit{et al.}'s prestrained protocols \cite{fung_pseudoelasticity_1979}, lead to poor predictions for other loading paths (Fig. \ref{fig:effphypred}). Although not obvious at first, $\Psi_{eff}$ severely underestimates the response of the material in the low-stress region. The D-optimality with two protocols in this prestrained range is only $1.35$, which improves to $1.98\times 10^4$ with six protocols. This pales in comparison to $9.7 \times 10^2$ for the two optimal protocols and $2.2 \times 10^7$ with three optimal protocols. When both $\Psi_{eff}$ and three optimal loading paths are utilized, we found that the loading paths are both fitted (Fig. \ref{fig:effoptfit}) and predicted very well (Fig. \ref{fig:effoptpred}). We also tested other non-optimal loading paths with modifications to the form of $\Psi_{eff}$ (Appendix \ref{sec:otherresults}). To briefly summarize these results, with an optimal set of loading paths, $\Psi_{eff}$ is able to fully reproduce the response of collagenous soft tissue for a wide range of deformation. However, without optimal loading paths, the form of $\Psi_{eff}$ can have an unpredictable impact on the predicted response, even though the quality of fit is very similar. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/effphyfit}
-\caption{The fit of $\Psi_{eff}$ to the prestrained loading paths is very good. A) The $S_{11}$ surface fitted to the data points. B) The $S_{22}$ surface fitted to the data points. C) Best fit of the $S_{11}$ component of the loading paths. D) Best fit of the $S_{22}$ component of the loading paths.}
+\caption{The fit of $\Psi_{eff}$ to the prestrained loading paths is very good. A) The $S_{11}$ surface fitted to the data points. B) The $S_{22}$ surface fitted to the data points. C) The best fit of the $S_{11}$ component of the loading paths. D) The best fit of the $S_{22}$ component of the loading paths.}
 \label{fig:effphyfit}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/effphypred}
 \caption{$\Psi_{eff}$ predicts the A) $S_{11}$ component and B) $S_{22}$ component of the unfitted loading paths very poorly even though the fit to the prestrained range is very good (Fig. \ref{fig:effphyfit}). The inset in A shows the corresponding loading paths.}
 \label{fig:effphypred}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-	
+    
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/effoptfit}
 \caption{$\Psi_{eff}$ fit optimal loading paths very well. A) The $S_{11}$ surface fitted to the data points. B) The $S_{22}$ surface fitted to the data points. C) Best fit of the $S_{11}$ component of the loading paths. D) Best fit of the $S_{22}$ component of the loading paths.}
 \label{fig:effoptfit}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%-------------------	begin FIGURE 	-------------------%
+%-------------------    begin FIGURE     -------------------%
 \begin{figure}[hptb]
 \centering
 \includegraphics[width=\textwidth]{Images/chapter5/effoptpred}
 \caption{Combining $\Psi_{eff}$ with optimal loading paths to predicts the A) $S_{11}$ component and B) $S_{22}$ component of the remaining unfitted loading paths very well from fit (Fig. \ref{fig:effoptfit}). The inset in B shows the corresponding loading predicted paths.}
 \label{fig:effoptpred}
 \end{figure} 
-%-------------------	 end FIGURE 	-------------------%
+%-------------------     end FIGURE     -------------------%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
